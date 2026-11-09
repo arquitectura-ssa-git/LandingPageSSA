@@ -1,0 +1,186 @@
+---
+import { Picture } from 'astro:assets';
+import oficina from '../assets/estudio/oficina.jpg';
+import detalle from '../assets/proyectos/casa-am-detalle.jpg';
+import { site } from '../data/site';
+
+// Textos: marca/manual/Brandbook.pdf y Culture Book v1.pdf
+const valores = [
+  {
+    n: '01',
+    titulo: 'Seriedad',
+    texto:
+      'Un valor que relacionamos no sólo con la comunicación, sino fundamentalmente con la ética y la cultura de trabajo.',
+  },
+  {
+    n: '02',
+    titulo: 'Innovación',
+    texto:
+      'Es nuestro valor diferencial. Probamos, nos equivocamos a conciencia y buscamos superarnos en cada proyecto.',
+  },
+  {
+    n: '03',
+    titulo: 'Excelencia',
+    texto:
+      'Es nuestra metodología de trabajo: ejecutamos con precisión y aspiramos siempre a la superación.',
+  },
+];
+---
+<section class="estudio" id="estudio" aria-labelledby="estudio-title">
+  <div class="wrap">
+    <div class="grid estudio-intro">
+      <p class="label label-bracket estudio-label" data-reveal>02 — Estudio</p>
+      <h2 class="estudio-title" id="estudio-title" data-reveal style="--delay:.08s">
+        Somos una oficina de arquitectura que desarrolla proyectos de alto estándar,{' '}
+        <span class="muted">con foco en la innovación y la excelencia, generando un cambio de paradigma en la disciplina.</span>
+      </h2>
+    </div>
+
+    <div class="grid estudio-media">
+      <figure class="estudio-oficina" data-reveal>
+        <Picture
+          src={oficina}
+          alt="Oficina de Saez Sanchez Arquitectos: puestos de trabajo frente a un ventanal con cortinas verticales"
+          formats={['avif', 'webp']}
+          widths={[640, 960, 1280, 1600]}
+          sizes="(max-width: 720px) 100vw, (max-width: 1280px) 60vw, 55vw"
+          loading="lazy"
+        />
+      </figure>
+
+      <div class="estudio-side">
+        <figure class="estudio-detalle" data-reveal style="--delay:.12s">
+          <Picture
+            src={detalle}
+            alt="Detalle de fachada de la Casa AM: celosía de madera y hormigón visto"
+            formats={['avif', 'webp']}
+            widths={[400, 640, 960]}
+            sizes="(max-width: 720px) 50vw, 20vw"
+            loading="lazy"
+          />
+          <figcaption class="label">Casa AM — detalle</figcaption>
+        </figure>
+
+        <div class="estudio-proposito" data-reveal style="--delay:.2s">
+          <h3 class="label">Propósito</h3>
+          <p>
+            Nuestra ambición consiste en desarrollar una obra arquitectónica que cambie los
+            paradigmas actuales, trascienda y sirva como referencia para el futuro.
+          </p>
+          <p class="estudio-since">
+            <span class="since-num">{site.since}</span>
+            <span class="label">Pablo Saez y Álvaro Sánchez<br />fundan el estudio en Tucumán</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid estudio-valores">
+      <h3 class="label label-bracket valores-label" data-reveal>Valores</h3>
+      <ol class="valores-list">
+        {valores.map((v, i) => (
+          <li class="valor" data-reveal style={`--delay:${0.08 * i}s`}>
+            <span class="valor-n">{v.n}</span>
+            <h4 class="valor-title">{v.titulo}</h4>
+            <p>{v.texto}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<style>
+  .estudio {
+    padding-block: clamp(96px, 14vw, 220px) clamp(80px, 10vw, 160px);
+    background: var(--cultured);
+    color: var(--lead-gray);
+  }
+
+  /* Intro */
+  .estudio-intro { row-gap: 28px; }
+  .estudio-label { grid-column: 1 / span 2; padding-top: 0.9em; color: var(--sonic-silver); }
+  .estudio-title {
+    grid-column: 3 / -1;
+    font-size: var(--fs-h2);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+  }
+  .muted { color: var(--sonic-silver); }
+
+  /* Imágenes */
+  .estudio-media {
+    margin-top: clamp(64px, 9vw, 140px);
+    row-gap: 40px;
+    align-items: start;
+  }
+  .estudio-oficina { grid-column: 1 / span 6; }
+  .estudio-oficina { position: sticky; top: calc(var(--header-h) + 32px); }
+  .estudio-oficina :global(img) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    filter: grayscale(1) contrast(1.02);
+  }
+  .estudio-side {
+    grid-column: 8 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(40px, 5vw, 72px);
+  }
+  .estudio-detalle { width: 58%; }
+  .estudio-detalle :global(img) { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; }
+  .estudio-detalle figcaption { margin-top: 10px; color: var(--sonic-silver); }
+
+  .estudio-proposito { display: flex; flex-direction: column; gap: 18px; }
+  .estudio-proposito h3 { color: var(--sonic-silver); }
+  .estudio-proposito > p:first-of-type { font-size: var(--fs-lead); line-height: 1.32; font-weight: 300; letter-spacing: -0.01em; }
+
+  .estudio-since {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    margin-top: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line-light);
+  }
+  .since-num { font-size: clamp(3rem, 2rem + 3vw, 5rem); font-weight: 300; letter-spacing: -0.05em; line-height: 0.8; }
+  .estudio-since .label { color: var(--sonic-silver); }
+
+  /* Valores */
+  .estudio-valores { margin-top: clamp(80px, 10vw, 160px); row-gap: 28px; }
+  .valores-label { grid-column: 1 / span 2; color: var(--sonic-silver); padding-top: 22px; }
+  .valores-list {
+    grid-column: 3 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--gutter);
+  }
+  .valor {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 20px;
+    border-top: 1px solid var(--lead-gray);
+  }
+  .valor-n { font-size: var(--fs-label); font-weight: 500; letter-spacing: 0.12em; color: var(--sonic-silver); }
+  .valor-title { font-size: clamp(1.75rem, 1.2rem + 1.4vw, 2.5rem); font-weight: 300; letter-spacing: -0.03em; line-height: 1; margin: 0; }
+  .valor p { color: var(--sonic-silver); max-width: 34ch; }
+
+  @media (max-width: 1280px) {
+    .estudio-label, .valores-label { grid-column: 1 / -1; padding-top: 0; }
+    .estudio-title { grid-column: 1 / -1; }
+    .valores-list { grid-column: 1 / -1; }
+    .estudio-oficina { grid-column: 1 / span 6; }
+    .estudio-side { grid-column: 7 / -1; }
+    .estudio-detalle { width: 72%; }
+  }
+
+  @media (max-width: 720px) {
+    .estudio-oficina, .estudio-side { grid-column: 1 / -1; }
+    .estudio-oficina { position: static; }
+    .estudio-detalle { width: 62%; }
+    .valores-list { grid-template-columns: 1fr; row-gap: 36px; }
+  }
+</style>

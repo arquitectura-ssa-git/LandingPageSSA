@@ -39,6 +39,8 @@ El objetivo del MVP es **mostrar obra y generar consultas** ("Cotizá tu proyect
 
 ### Etapas del MVP
 
+**Avance:** ✅ A · ✅ B (en revisión) · ⬜ C · ⬜ D · ⬜ E — vista previa: https://arquitectura-ssa-git.github.io/LandingPageSSA/
+
 | Etapa | Entregable | Quién |
 |---|---|---|
 | **A. Base** | Proyecto Astro + tipografía Creato Display + colores y grilla del manual + logo en SVG + deploy automático a GitHub Pages. | Claude |

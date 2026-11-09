@@ -1,0 +1,290 @@
+---
+import { Picture } from 'astro:assets';
+import { heroSlides } from '../data/proyectos';
+import { site } from '../data/site';
+
+const total = String(heroSlides.length).padStart(2, '0');
+const SLIDE_MS = 7000; // tiempo que se muestra cada obra
+---
+<section class="hero" id="top" data-hero data-duration={SLIDE_MS} style={`--slide-ms:${SLIDE_MS}ms`} aria-label="Presentación">
+  <div class="hero-media" aria-hidden="true">
+    {heroSlides.map((p, i) => (
+      <div class:list={['hero-slide', { 'is-active': i === 0 }]} data-slide>
+        <Picture
+          src={p.imagen}
+          alt=""
+          formats={['avif', 'webp']}
+          widths={[640, 960, 1280, 1920, 2400]}
+          sizes="100vw"
+          loading="eager"
+          fetchpriority={i === 0 ? 'high' : 'low'}
+          decoding={i === 0 ? 'sync' : 'async'}
+        />
+      </div>
+    ))}
+    <div class="hero-shade"></div>
+  </div>
+
+  <div class="wrap hero-content" id="contenido">
+    <div class="grid hero-grid">
+      <p class="label label-bracket hero-kicker" data-reveal>Oficina de arquitectura</p>
+
+      <h1 class="hero-title" data-reveal style="--delay:.1s">
+        Arquitectura de alto estándar, pensada para trascender.
+      </h1>
+
+      <div class="hero-side" data-reveal style="--delay:.25s">
+        <p>
+          Desarrollamos proyectos con foco en la innovación y la excelencia:
+          vivienda, desarrollos residenciales, hotelería y obra corporativa.
+        </p>
+        <div class="hero-actions">
+          <a href="#contacto" class="btn btn-solid-light">Cotizá tu proyecto <span class="arrow" aria-hidden="true">→</span></a>
+          <a href="#proyectos" class="btn btn-light">Ver proyectos</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-foot">
+      <div class="hero-caption" aria-live="polite">
+        {heroSlides.map((p, i) => (
+          <p class:list={['caption', { 'is-active': i === 0 }]} data-caption>
+            <span class="caption-n">{String(i + 1).padStart(2, '0')} / {total}</span>
+            <span class="caption-name">{p.nombre}</span>
+            <span class="caption-meta">{p.tipo} · {p.ubicacion}</span>
+          </p>
+        ))}
+      </div>
+
+      <div class="hero-controls">
+        <ol class="hero-dots" aria-label="Elegir obra">
+          {heroSlides.map((p, i) => (
+            <li>
+              <button type="button" class:list={['dot', { 'is-active': i === 0 }]} data-dot aria-label={`Mostrar ${p.nombre}`} aria-current={i === 0 ? 'true' : undefined}>
+                <span class="dot-fill"></span>
+              </button>
+            </li>
+          ))}
+        </ol>
+        <button type="button" class="hero-pause" data-pause aria-pressed="false">
+          <span data-pause-label>Pausar</span>
+        </button>
+      </div>
+
+      <p class="hero-place label">{site.location} — Desde {site.since}</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: var(--cultured);
+    background: var(--smoky-black);
+    overflow: hidden;
+  }
+
+  .hero-media { position: absolute; inset: 0; }
+  .hero-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1.6s var(--ease);
+  }
+  .hero-slide.is-active { opacity: 1; }
+  .hero-slide :global(picture) { height: 100%; }
+  .hero-slide :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.06);
+    transition: transform calc(var(--slide-ms) + 2s) linear;
+  }
+  .hero-slide.is-active :global(img) { transform: scale(1); }
+
+  .hero-shade {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(18, 18, 18, 0.62) 0%, rgba(18, 18, 18, 0.2) 14%, rgba(18, 18, 18, 0) 30%),
+      linear-gradient(0deg, rgba(18, 18, 18, 0.82) 0%, rgba(18, 18, 18, 0.35) 42%, rgba(18, 18, 18, 0) 70%);
+  }
+
+  .hero-content {
+    position: relative;
+    padding-top: calc(var(--header-h) + 48px);
+    padding-bottom: 28px;
+  }
+
+  .hero-grid { row-gap: 28px; align-items: end; }
+  .hero-kicker { grid-column: 1 / -1; opacity: 0.8; }
+  .hero-title {
+    grid-column: 1 / span 7;
+    font-size: var(--fs-h1);
+    max-width: 15ch;
+  }
+  .hero-side {
+    grid-column: 8 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    font-size: var(--fs-body);
+    line-height: 1.5;
+    color: rgba(242, 242, 242, 0.86);
+    max-width: 36ch;
+    padding-bottom: 0.6em;
+  }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+  .hero-foot {
+    margin-top: clamp(40px, 7vh, 88px);
+    padding-top: 18px;
+    border-top: 1px solid var(--line-dark);
+    display: grid;
+    grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+    column-gap: var(--gutter);
+    align-items: center;
+  }
+
+  .hero-caption { grid-column: 1 / span 5; display: grid; }
+  .caption {
+    grid-area: 1 / 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 18px;
+    row-gap: 2px;
+    font-size: var(--fs-small);
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  }
+  .caption.is-active { opacity: 1; transform: none; }
+  .caption-n { font-size: var(--fs-label); letter-spacing: 0.12em; opacity: 0.6; }
+  .caption-name { font-weight: 500; letter-spacing: 0.02em; }
+  .caption-meta { opacity: 0.7; }
+
+  .hero-controls { grid-column: 6 / span 2; display: flex; align-items: center; gap: 16px; }
+  .hero-dots { display: flex; gap: 8px; flex: 1; }
+  .hero-dots li { flex: 1; }
+  .dot {
+    display: block;
+    width: 100%;
+    height: 24px;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    position: relative;
+  }
+  .dot::before, .dot-fill {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; top: 50%;
+    height: 1px;
+    background: rgba(242, 242, 242, 0.3);
+  }
+  .dot-fill { background: var(--cultured); transform: scaleX(0); transform-origin: left; }
+  .dot.is-done .dot-fill { transform: scaleX(1); }
+  .dot.is-active .dot-fill { animation: fill var(--slide-ms) linear forwards; }
+  .hero.is-paused .dot.is-active .dot-fill { animation-play-state: paused; }
+  @keyframes fill { to { transform: scaleX(1); } }
+
+  .hero-pause {
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    font-size: var(--fs-label);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    cursor: pointer;
+    padding: 8px 0;
+    min-width: 72px;
+    text-align: right;
+  }
+  .hero-pause:hover { opacity: 1; }
+
+  .hero-place { grid-column: 8 / -1; text-align: right; white-space: nowrap; opacity: 0.7; }
+
+  @media (max-width: 1280px) {
+    .hero-title { grid-column: 1 / span 10; }
+    .hero-side { grid-column: 1 / span 6; }
+    .hero-caption { grid-column: 1 / span 6; }
+    .hero-controls { grid-column: 7 / -1; }
+    .hero-place { display: none; }
+  }
+
+  @media (max-width: 720px) {
+    .hero-content { padding-top: calc(var(--header-h) + 32px); padding-bottom: 20px; }
+    .hero-title { grid-column: 1 / -1; max-width: none; }
+    .hero-side { grid-column: 1 / -1; gap: 22px; max-width: none; }
+    .hero-actions .btn { flex: 1 1 auto; justify-content: center; }
+    .hero-foot { row-gap: 14px; margin-top: 32px; }
+    .hero-caption, .hero-controls { grid-column: 1 / -1; }
+    .caption-meta { flex-basis: 100%; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-slide :global(img) { transform: none !important; transition: none; }
+  }
+</style>
+
+<script>
+  const hero = document.querySelector<HTMLElement>('[data-hero]')!;
+  const slides = [...hero.querySelectorAll<HTMLElement>('[data-slide]')];
+  const captions = [...hero.querySelectorAll<HTMLElement>('[data-caption]')];
+  const dots = [...hero.querySelectorAll<HTMLButtonElement>('[data-dot]')];
+  const pauseBtn = hero.querySelector<HTMLButtonElement>('[data-pause]')!;
+  const pauseLabel = hero.querySelector<HTMLElement>('[data-pause-label]')!;
+
+  const duration = Number(hero.dataset.duration) || 7000;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let current = 0;
+  let paused = reduce;
+  let timer: number | undefined;
+
+  const show = (i: number) => {
+    current = (i + slides.length) % slides.length;
+    slides.forEach((s, k) => s.classList.toggle('is-active', k === current));
+    captions.forEach((c, k) => c.classList.toggle('is-active', k === current));
+    dots.forEach((d, k) => {
+      d.classList.remove('is-active');
+      d.classList.toggle('is-done', k < current);
+      d.toggleAttribute('aria-current', k === current);
+    });
+    // reinicia la animación de la barra activa
+    void dots[current].offsetWidth;
+    dots[current].classList.add('is-active');
+    schedule();
+  };
+
+  const schedule = () => {
+    window.clearTimeout(timer);
+    if (!paused) timer = window.setTimeout(() => show(current + 1), duration);
+  };
+
+  const setPaused = (p: boolean) => {
+    paused = p;
+    hero.classList.toggle('is-paused', p);
+    pauseBtn.setAttribute('aria-pressed', String(p));
+    pauseLabel.textContent = p ? 'Reanudar' : 'Pausar';
+    if (p) window.clearTimeout(timer);
+    else show(current);
+  };
+
+  dots.forEach((d, i) => d.addEventListener('click', () => show(i)));
+  pauseBtn.addEventListener('click', () => setPaused(!paused));
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) window.clearTimeout(timer);
+    else schedule();
+  });
+
+  if (reduce) setPaused(true);
+  else schedule();
+</script>

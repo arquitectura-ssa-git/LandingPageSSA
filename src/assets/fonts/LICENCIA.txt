@@ -1,0 +1,4 @@
+Creato Display — Copyright (c) 2021 Anugrah Pasau.
+Distribuida bajo la SIL Open Font License, versión 1.1 (https://openfontlicense.org).
+Los archivos .woff2 de esta carpeta son conversiones sin modificar de los .otf
+provistos en marca/tipografias/ y conservan los metadatos de licencia originales.

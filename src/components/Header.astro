@@ -1,0 +1,179 @@
+---
+import Logo from '../assets/brand/logo-ssa.svg';
+import { nav } from '../data/site';
+---
+<header class="header" data-header>
+  <div class="wrap header-inner">
+    <a href="#top" class="brand" aria-label="Saez Sanchez Arquitectos, volver al inicio">
+      <Logo class="brand-logo" aria-hidden="true" />
+    </a>
+
+    <nav class="nav" aria-label="Principal">
+      <ol class="nav-list">
+        {nav.map((item) => (
+          <li>
+            <a href={item.href}><span class="nav-n">{item.n}</span>{item.label}</a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+
+    <a href="#contacto" class="btn btn-light header-cta">Cotización</a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-mobile" data-menu-toggle>
+      <span class="visually-hidden" data-menu-label>Abrir menú</span>
+      <span class="menu-bar"></span><span class="menu-bar"></span>
+    </button>
+  </div>
+
+  <div class="menu-mobile" id="menu-mobile" data-menu hidden>
+    <ol class="wrap menu-mobile-list">
+      {nav.map((item) => (
+        <li>
+          <a href={item.href}><span class="nav-n">{item.n}</span>{item.label}</a>
+        </li>
+      ))}
+    </ol>
+    <div class="wrap menu-mobile-foot">
+      <a href="#contacto" class="btn btn-solid-light">Cotizá tu proyecto <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 50;
+    color: var(--cultured);
+    transition: background-color 0.45s var(--ease), color 0.45s var(--ease), border-color 0.45s var(--ease);
+    border-bottom: 1px solid transparent;
+  }
+  .header.is-solid {
+    background: rgba(242, 242, 242, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: var(--lead-gray);
+    border-bottom-color: var(--line-light);
+  }
+  .header.is-solid .header-cta { color: var(--lead-gray); }
+  .header.is-solid .header-cta:hover { background: var(--lead-gray); color: var(--cultured); border-color: var(--lead-gray); }
+  .header.menu-open { background: var(--smoky-black); color: var(--cultured); border-bottom-color: var(--line-dark); }
+
+  .header-inner {
+    height: var(--header-h);
+    display: flex;
+    align-items: center;
+    gap: var(--gutter);
+  }
+
+  .brand { display: block; margin-right: auto; }
+  .brand-logo { height: 15px; width: auto; }
+
+  .nav-list { display: flex; gap: clamp(20px, 2.6vw, 48px); }
+  .nav-list a, .menu-mobile-list a {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: var(--fs-small);
+    letter-spacing: 0.02em;
+    position: relative;
+  }
+  .nav-n { font-size: 0.625rem; font-weight: 500; letter-spacing: 0.08em; opacity: 0.6; }
+  .nav-list a::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 100%; bottom: -6px;
+    height: 1px;
+    background: currentColor;
+    transition: right 0.4s var(--ease);
+  }
+  .nav-list a:hover::after { right: 0; }
+
+  .header-cta { margin-left: clamp(20px, 3vw, 56px); min-height: 40px; padding: 0 18px; font-size: 0.75rem; }
+
+  .menu-toggle {
+    display: none;
+    position: relative;
+    width: 44px; height: 44px;
+    margin-right: -10px;
+    border: 0; background: none; color: inherit; cursor: pointer;
+  }
+  .menu-bar {
+    position: absolute; left: 10px; right: 10px;
+    height: 1px; background: currentColor;
+    transition: transform 0.4s var(--ease), top 0.4s var(--ease);
+  }
+  .menu-bar:nth-of-type(2) { top: 18px; }
+  .menu-bar:nth-of-type(3) { top: 26px; }
+  .menu-toggle[aria-expanded='true'] .menu-bar:nth-of-type(2) { top: 22px; transform: rotate(45deg); }
+  .menu-toggle[aria-expanded='true'] .menu-bar:nth-of-type(3) { top: 22px; transform: rotate(-45deg); }
+
+  .menu-mobile {
+    position: fixed;
+    inset: var(--header-h) 0 0 0;
+    background: var(--smoky-black);
+    color: var(--cultured);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 0 calc(32px + env(safe-area-inset-bottom));
+    overflow-y: auto;
+  }
+  .menu-mobile[hidden] { display: none; }
+  .menu-mobile-list li { border-bottom: 1px solid var(--line-dark); }
+  .menu-mobile-list a {
+    width: 100%;
+    padding: 18px 0;
+    font-size: clamp(2rem, 9vw, 2.75rem);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    gap: 12px;
+  }
+  .menu-mobile-list .nav-n { font-size: 0.75rem; padding-top: 4px; }
+  .menu-mobile-foot .btn { width: 100%; justify-content: space-between; }
+
+  @media (max-width: 960px) {
+    .nav, .header-cta { display: none; }
+    .menu-toggle { display: block; }
+  }
+  @media (max-width: 720px) {
+    .brand-logo { height: 12px; }
+  }
+</style>
+
+<script>
+  const header = document.querySelector<HTMLElement>('[data-header]')!;
+  const toggle = header.querySelector<HTMLButtonElement>('[data-menu-toggle]')!;
+  const label = header.querySelector<HTMLElement>('[data-menu-label]')!;
+  const menu = header.querySelector<HTMLElement>('[data-menu]')!;
+
+  // Fondo sólido cuando se deja atrás el hero
+  const hero = document.querySelector('[data-hero]');
+  if (hero && 'IntersectionObserver' in window) {
+    new IntersectionObserver(
+      ([entry]) => header.classList.toggle('is-solid', !entry.isIntersecting),
+      { rootMargin: `-${header.offsetHeight}px 0px 0px 0px` },
+    ).observe(hero);
+  } else {
+    header.classList.add('is-solid');
+  }
+
+  const setMenu = (open: boolean) => {
+    toggle.setAttribute('aria-expanded', String(open));
+    label.textContent = open ? 'Cerrar menú' : 'Abrir menú';
+    menu.hidden = !open;
+    header.classList.toggle('menu-open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+  toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
+  menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !menu.hidden) {
+      setMenu(false);
+      toggle.focus();
+    }
+  });
+  matchMedia('(min-width: 961px)').addEventListener('change', (e) => e.matches && setMenu(false));
+</script>
