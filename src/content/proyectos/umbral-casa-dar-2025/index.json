@@ -1,12 +1,14 @@
 {
+  "orden": 5,
   "nombre": "Umbral · Casa DAR 2025",
   "visible": true,
-  "destacado": false,
+  "destacado": true,
   "en_portada": false,
   "categoria": "Otros proyectos",
   "tipo": "Diseño interior",
   "ubicacion": "San Miguel de Tucumán",
   "anio": "2025",
+  "superficie": null,
   "resumen": "",
   "memoria": "UMBRAL // Hall de acceso Un hall ovalado, contenedor de la instalación de Andrea Alkalay, introduce al visitante en el paisaje tucumano a través de una interpretación de las yungas. La obra, abstracta y figurativa a la vez, se despliega como un abrazo simbólico, la naturaleza como anfitriona da la bienvenida e inaugura la experiencia.\n\nEl gran corredor, un espacio neutro, silencioso y austero, funciona como un dispositivo depurador, un detox visual y sonoro que prepara al visitante para disfrutar del recorrido con una percepción renovada. Un lenguaje abstracto y atemporal, donde la neutralidad material y espacial otorgan protagonismo al arte y la arquitectura como así también al acto mismo de atravesar el umbral.",
   "portada": "umbral-casa-dar-2025-1.webp",
@@ -15,6 +17,5 @@
     "umbral-casa-dar-2025-3.webp",
     "umbral-casa-dar-2025-4.webp"
   ],
-  "creditos": "",
-  "orden": 5
+  "creditos": ""
 }
