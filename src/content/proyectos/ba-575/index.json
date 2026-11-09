@@ -1,0 +1,20 @@
+{
+  "nombre": "BA 575",
+  "visible": true,
+  "destacado": false,
+  "en_portada": false,
+  "categoria": "Otros proyectos",
+  "tipo": "Edificio en altura",
+  "ubicacion": "San Miguel de Tucumán, Tucumán",
+  "anio": "2022",
+  "resumen": "",
+  "memoria": "BA 575 Ubicado en Barrio Sur, en una de las calles mas importantes de este sector, y a una cuadra de Plaza San Martin. El edificio destaca por la fachada como filtro ambiental y termico, que confieren a su vez como un juego formal de llenos y vacios generados por los paneles de chapa perforada. Presenta parasoles en el frente del edificio, esto es un filtro hacia lo privado y donde genera distintas atmosferas a lo largo del dia y de noche por las luces y sombras.",
+  "portada": "ba-575-1.webp",
+  "galeria": [
+    "ba-575-2.webp",
+    "ba-575-3.webp",
+    "ba-575-4.webp"
+  ],
+  "creditos": "",
+  "orden": 21
+}

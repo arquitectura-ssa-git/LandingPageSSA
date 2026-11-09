@@ -1,0 +1,62 @@
+{
+  "proceso": [
+    {
+      "titulo": "Anteproyecto",
+      "texto": "Desde que nos encargan el proyecto y conocemos las necesidades a resolver, apelamos a la creatividad para representar la idea en forma tangible, ajustándonos a las restricciones del terreno y las normas del sitio."
+    },
+    {
+      "titulo": "Proyecto",
+      "texto": "Aprobada la idea, pasamos a esta etapa técnica donde elaboramos la documentación de los subsistemas técnicos estructurales y de instalaciones para obtener el permiso habilitante de obra y un presupuesto certero."
+    },
+    {
+      "titulo": "Proyecto ejecutivo",
+      "texto": "Involucramos la documentación gráfica y escrita apta para construcción. Hacemos foco en las partes, los detalles constructivos de cada espacio y sus terminaciones, para que la obra sea fiel a la idea inicial."
+    }
+  ],
+  "fundadores": [
+    {
+      "nombre": "Pablo Saez",
+      "titulo": "Arquitecto · MBA",
+      "foto": "/src/content/media/pablo-saez.webp",
+      "bio": "Socio cofundador de Saez Sanchez Arquitectos desde 2006. Arquitecto por la Facultad de Arquitectura y Urbanismo de la Universidad Nacional de Tucumán (2005) y MBA por la Escuela de Negocios de la Politécnica de Cataluña / ADEN Business School (2020).\n\nCuenta con especializaciones en gestión estratégica y de proyectos por la Universidad George Washington y la Universidad de California. Fue docente de Morfología III y Taller de Arquitectura II en la FAU-UNT y obtuvo el primer premio del Concurso Taller de las Américas de la Universidad Texas A&M (2004)."
+    },
+    {
+      "nombre": "Álvaro Sánchez",
+      "titulo": "Arquitecto · MBA",
+      "foto": "/src/content/media/alvaro-sanchez.webp",
+      "bio": "Socio cofundador de Saez Sanchez Arquitectos desde 2006. Arquitecto por la Facultad de Arquitectura y Urbanismo de la Universidad Nacional de Tucumán (2005), abanderado con el mejor promedio de su promoción, y MBA por la Escuela de Negocios de la Politécnica de Cataluña / ADEN Business School (2020).\n\nTiene posgrados en Dirección Técnica de Obras y en Desarrollo de Emprendimientos Inmobiliarios. Fue docente en la FAU-UNT entre 2006 y 2013 y becario de Máster en L’École Nationale Supérieure d’Architecture de Paris-La Villette (2012)."
+    }
+  ],
+  "reconocimientos": [
+    {
+      "anio": "2025",
+      "titulo": "Premio AVANCO",
+      "detalle": "Primer premio Concurso AVANCO, Casa Interior, Country The Point."
+    },
+    {
+      "anio": "2021",
+      "titulo": "PropTech LATAM Award",
+      "detalle": "Mejor estudio de arquitectura en uso de tecnología en Latinoamérica."
+    },
+    {
+      "anio": "2019",
+      "titulo": "Premio a la Innovación ADEN",
+      "detalle": ""
+    },
+    {
+      "anio": "2019",
+      "titulo": "Joven Empresario",
+      "detalle": "Premio de la Federación Económica de Tucumán."
+    },
+    {
+      "anio": "2018",
+      "titulo": "Marca Tucumán",
+      "detalle": "Licenciatarios de la marca."
+    },
+    {
+      "anio": "2009",
+      "titulo": "Casa DAR",
+      "detalle": "Primer premio de Diseño Interior (Diseño Argentino), Bar Have Fun!"
+    }
+  ]
+}

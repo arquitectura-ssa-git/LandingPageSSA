@@ -1,0 +1,20 @@
+{
+  "nombre": "Loft Hotel",
+  "visible": true,
+  "destacado": false,
+  "en_portada": false,
+  "categoria": "Otros proyectos",
+  "tipo": "Apart hotel",
+  "ubicacion": "Asunción, Paraguay",
+  "anio": "2021",
+  "resumen": "",
+  "memoria": "Apart Hotel Carmelitas es un proyecto ubicado en la ciudad de Asunción, Paraguay. El terreno cuenta con 1157 m2, por lo que el desafío del desarrollo del Apart Hotel fue adaptarse a la morfología del mismo potenciando la arquitectura. Formalmente el Hotel esta compuesto por 1 basamento del cual se desprenden 3 volúmenes, 2 de ellos destinados a las Suites y 1 destinado al núcleo de circulación vertical.\n\nLas divisiones entre los niveles están planteadas abarcando 2 niveles logrando una sensación de verticalidad acompañado con parasoles verticales que potencian este concepto. Funcionalmente la circulación horizontal y el núcleo de circulación vertical adoptan 1 de los ejes medianeros del terreno adaptándose a la irregularidad del mismo logrando regularizar las dimensiones de los espacios.\n\nEl Apart Hotel cuenta con un subsuelo destinado a cocheras, una planta baja por la cual accedemos hacia las Suites y hacia 1 local comercial por un lado, y por otro lado hacia otro local comercial el cual cuenta con un patio que brinda luz y ventilación a los espacios y con la posibilidad de desborde tanto hacia el frente del edificio como hacia el contrafrente. Dispone de 6 niveles destinados a las Suites, y una terraza accesible con espacios semicubiertos.\n\nLa materialización del proyecto fue trabajada en una escala de grises mediante Hormigón de tablas visto en el pórtico de acceso, parasoles verticales metálicos y terminaciones de mampostería en tonos de grises.",
+  "portada": "loft-hotel-1.webp",
+  "galeria": [
+    "loft-hotel-2.webp",
+    "loft-hotel-3.webp",
+    "loft-hotel-4.webp"
+  ],
+  "creditos": "",
+  "orden": 22
+}

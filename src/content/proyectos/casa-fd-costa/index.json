@@ -1,0 +1,20 @@
+{
+  "nombre": "Casa FD Costa",
+  "visible": true,
+  "destacado": false,
+  "en_portada": false,
+  "categoria": "Residenciales",
+  "tipo": "Vivienda unifamiliar",
+  "ubicacion": "Tafí del Valle, Tucumán",
+  "anio": "2023",
+  "resumen": "",
+  "memoria": "Las vistas le dan forma a esta casa de montaña. El cerro cercano y el espejo de agua lejano, definen una linea inclinada que acompaña la pendiente. Esta linea se conforma en la arquitectura de la cubierta y su pendiente del techo, permitiendo desde el interior mirar a ambos lugares, aprovechando el sol del Norte y enmarcando las vistas del Sur.\n\nSin alterar el terreno, se adapta a la topografia, disponiendo los espacios de encuentro en la planta de acceso, y dejando los lugares de descanso en la tranquilidad del basamento. Madera, piedra y metal, conforman los planos y generan dos lineas de marcada horizontalidad visibles en su escala distante.",
+  "portada": "casa-fd-costa-1.webp",
+  "galeria": [
+    "casa-fd-costa-2.webp",
+    "casa-fd-costa-3.webp",
+    "casa-fd-costa-4.webp"
+  ],
+  "creditos": "",
+  "orden": 8
+}

@@ -1,0 +1,19 @@
+{
+  "nombre": "Casa FD",
+  "visible": true,
+  "destacado": false,
+  "en_portada": false,
+  "categoria": "Residenciales",
+  "tipo": "Vivienda unifamiliar",
+  "ubicacion": "San Pablo Country, Yerba Buena, Tucumán",
+  "anio": "2018",
+  "resumen": "",
+  "memoria": "SUPERFICIE: 450.00 m2 El proyecto se estructura en L en frente y contrafrente, generando contención espacial en el recibimiento y en el jardín posterior, aprovechando visuales del cerro y golf. La casa, es introvertida hacia el sur, resguardando intimidad familiar desde la calle. En el otro extremo, hacia el norte, se abren los espacios principales al jardín, aprovechando los beneficios de la orientación, que deja entrar al interior la majestuosidad del paisaje.\n\nLa materialidad se conforma, entre planos opacos de hormigón, y traslucidos de vidrio. El vacío horadando los planos de hormigón para contrarrestar su peso visual, generando luces y sombras que definen a este proyecto.",
+  "portada": "casa-fd-1.webp",
+  "galeria": [
+    "casa-fd-2.webp",
+    "casa-fd-3.webp"
+  ],
+  "creditos": "",
+  "orden": 33
+}

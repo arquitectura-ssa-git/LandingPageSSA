@@ -1,0 +1,233 @@
+---
+import { sitio } from '../lib/contenido';
+const { contacto, redes } = sitio;
+const canales = {
+  whatsapp: contacto.whatsapp,
+  email: contacto.email,
+};
+const hayCanal = !!(canales.whatsapp || canales.email);
+const fallback = redes.find((r) => r.label === 'Instagram') ?? redes[0];
+
+const tipos = [
+  'Vivienda unifamiliar',
+  'Edificio o desarrollo residencial',
+  'Comercial o corporativo',
+  'Hotelería',
+  'Interiorismo',
+  'Otro',
+];
+const telLink = contacto.telefono ? `tel:${contacto.telefono.replace(/[^\d+]/g, '')}` : '';
+---
+<section class="contacto" id="contacto" aria-labelledby="contacto-title">
+  <div class="wrap grid contacto-grid">
+    <div class="contacto-intro">
+      <p class="label label-bracket contacto-label" data-reveal>04 — Contacto</p>
+      <h2 class="contacto-title" id="contacto-title" data-reveal style="--delay:.06s">Cotizá tu proyecto</h2>
+      <p class="contacto-lead" data-reveal style="--delay:.12s">
+        Contanos qué tenés en mente. Te respondemos para coordinar una primera reunión.
+      </p>
+
+      <ul class="contacto-datos" data-reveal style="--delay:.18s">
+        {contacto.whatsapp && (
+          <li><span class="label">WhatsApp</span><a href={`https://wa.me/${contacto.whatsapp}`} target="_blank" rel="noopener">Escribinos</a></li>
+        )}
+        {contacto.email && (
+          <li><span class="label">Email</span><a href={`mailto:${contacto.email}`}>{contacto.email}</a></li>
+        )}
+        {contacto.telefono && (
+          <li><span class="label">Teléfono</span><a href={telLink}>{contacto.telefono}</a></li>
+        )}
+        {contacto.direccion && (
+          <li><span class="label">Estudio</span><address>{contacto.direccion}</address></li>
+        )}
+        {redes.length > 0 && (
+          <li>
+            <span class="label">Redes</span>
+            <span class="contacto-redes">
+              {redes.map((r) => <a href={r.href} target="_blank" rel="noopener">{r.label}</a>)}
+            </span>
+          </li>
+        )}
+      </ul>
+    </div>
+
+    <form
+      class="form"
+      novalidate
+      data-form
+      data-whatsapp={canales.whatsapp}
+      data-email={canales.email}
+      data-fallback={fallback?.href ?? ''}
+      data-reveal
+      style="--delay:.1s"
+    >
+      <div class="field">
+        <label for="f-nombre">Nombre y apellido</label>
+        <input id="f-nombre" name="nombre" type="text" autocomplete="name" required />
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required />
+        </div>
+        <div class="field">
+          <label for="f-tel">Teléfono <span class="opt">(opcional)</span></label>
+          <input id="f-tel" name="telefono" type="tel" autocomplete="tel" />
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="f-tipo">Tipo de proyecto</label>
+          <select id="f-tipo" name="tipo">
+            {tipos.map((t) => <option>{t}</option>)}
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-sup">Superficie aprox. <span class="opt">(m², opcional)</span></label>
+          <input id="f-sup" name="superficie" type="text" inputmode="numeric" />
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-ubic">Ubicación del terreno <span class="opt">(opcional)</span></label>
+        <input id="f-ubic" name="ubicacion" type="text" />
+      </div>
+      <div class="field">
+        <label for="f-msg">Contanos sobre el proyecto</label>
+        <textarea id="f-msg" name="mensaje" rows="4" required></textarea>
+      </div>
+
+      <div class="form-actions">
+        {canales.whatsapp && (
+          <button type="submit" class="btn btn-solid-light" data-canal="whatsapp">Enviar por WhatsApp <span class="arrow" aria-hidden="true">→</span></button>
+        )}
+        {canales.email && (
+          <button type="submit" class:list={['btn', canales.whatsapp ? 'btn-light' : 'btn-solid-light']} data-canal="email">Enviar por email</button>
+        )}
+        {!hayCanal && (
+          <button type="submit" class="btn btn-solid-light" data-canal="ninguno">Enviar consulta <span class="arrow" aria-hidden="true">→</span></button>
+        )}
+      </div>
+      <p class="form-status" role="status" aria-live="polite" data-status></p>
+    </form>
+  </div>
+</section>
+
+<style>
+  .contacto { background: var(--lead-gray); color: var(--cultured); padding: clamp(88px, 11vw, 180px) 0; }
+  .contacto-grid { row-gap: 56px; align-items: start; }
+  .contacto-intro { grid-column: 1 / span 4; display: flex; flex-direction: column; gap: 20px; }
+  .contacto-label { color: rgba(242, 242, 242, 0.55); }
+  .contacto-title { font-size: var(--fs-h2); }
+  .contacto-lead { color: rgba(242, 242, 242, 0.7); max-width: 36ch; }
+
+  .contacto-datos { margin-top: 20px; }
+  .contacto-datos li {
+    display: grid; grid-template-columns: 96px 1fr; gap: 12px;
+    padding: 14px 0; border-top: 1px solid var(--line-dark); font-size: var(--fs-small);
+  }
+  .contacto-datos li:last-child { border-bottom: 1px solid var(--line-dark); }
+  .contacto-datos .label { color: rgba(242, 242, 242, 0.5); padding-top: 2px; }
+  .contacto-datos a { border-bottom: 1px solid transparent; transition: border-color 0.3s var(--ease); word-break: break-word; }
+  .contacto-datos a:hover { border-bottom-color: currentColor; }
+  .contacto-datos address { font-style: normal; }
+  .contacto-redes { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+
+  .form { grid-column: 6 / -1; display: flex; flex-direction: column; gap: 22px; }
+  .field { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 22px var(--gutter); }
+  .field label { font-size: var(--fs-label); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(242, 242, 242, 0.6); }
+  .opt { text-transform: none; letter-spacing: 0; font-weight: 400; opacity: 0.8; }
+  .field input, .field select, .field textarea {
+    width: 100%;
+    padding: 10px 0 12px;
+    border: 0;
+    border-bottom: 1px solid rgba(242, 242, 242, 0.3);
+    border-radius: 0;
+    background: transparent;
+    color: var(--cultured);
+    font: 400 1rem/1.4 var(--font);
+    transition: border-color 0.3s var(--ease);
+  }
+  .field select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%); background-position: calc(100% - 10px) 55%, calc(100% - 5px) 55%; background-size: 5px 5px; background-repeat: no-repeat; }
+  .field select option { color: var(--lead-gray); }
+  .field textarea { resize: vertical; min-height: 104px; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-bottom-color: var(--cultured); }
+  .field .is-invalid { border-bottom-color: #e2a3a3; }
+  .form-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+  .form-status { min-height: 1.4em; font-size: var(--fs-small); color: rgba(242, 242, 242, 0.75); }
+  .form-status a { border-bottom: 1px solid currentColor; }
+  .form-status.is-error { color: #f0bcbc; }
+
+  @media (max-width: 1280px) {
+    .contacto-intro { grid-column: 1 / span 4; }
+    .form { grid-column: 5 / -1; }
+  }
+  @media (max-width: 960px) {
+    .contacto-intro, .form { grid-column: 1 / -1; }
+  }
+  @media (max-width: 720px) {
+    .field-row { grid-template-columns: 1fr; }
+    .form-actions .btn { flex: 1 1 100%; justify-content: center; }
+  }
+</style>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-form]');
+  if (form) {
+    const status = form.querySelector<HTMLElement>('[data-status]')!;
+    let canal = '';
+    form.querySelectorAll<HTMLButtonElement>('[data-canal]').forEach((b) =>
+      b.addEventListener('click', () => (canal = b.dataset.canal!)),
+    );
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      status.classList.remove('is-error');
+      status.textContent = '';
+
+      let ok = true;
+      form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('[required]').forEach((f) => {
+        const valid = f.type === 'email' ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.value.trim()) : f.value.trim() !== '';
+        f.classList.toggle('is-invalid', !valid);
+        f.setAttribute('aria-invalid', String(!valid));
+        if (!valid) ok = false;
+      });
+      if (!ok) {
+        status.textContent = 'Revisá los campos marcados: nombre, un email válido y una breve descripción.';
+        status.classList.add('is-error');
+        form.querySelector<HTMLElement>('.is-invalid')?.focus();
+        return;
+      }
+
+      const d = Object.fromEntries(new FormData(form)) as Record<string, string>;
+      const lineas = [
+        `Hola, soy ${d.nombre}. Quisiera cotizar un proyecto.`,
+        '',
+        `Tipo: ${d.tipo}`,
+        d.ubicacion && `Ubicación: ${d.ubicacion}`,
+        d.superficie && `Superficie aprox.: ${d.superficie} m²`,
+        '',
+        d.mensaje,
+        '',
+        `Email: ${d.email}`,
+        d.telefono && `Teléfono: ${d.telefono}`,
+      ].filter((l) => l !== undefined && l !== false) as string[];
+      const texto = lineas.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+
+      const wa = form.dataset.whatsapp;
+      const email = form.dataset.email;
+      if (canal === 'whatsapp' && wa) {
+        window.open(`https://wa.me/${wa}?text=${encodeURIComponent(texto)}`, '_blank', 'noopener');
+        status.textContent = 'Se abrió WhatsApp con tu consulta lista para enviar.';
+      } else if (canal === 'email' && email) {
+        location.href = `mailto:${email}?subject=${encodeURIComponent(`Consulta web — ${d.tipo}`)}&body=${encodeURIComponent(texto)}`;
+        status.textContent = 'Se abrió tu correo con la consulta lista para enviar.';
+      } else {
+        const fb = form.dataset.fallback;
+        status.innerHTML = fb
+          ? `Por el momento recibimos consultas por <a href="${fb}" target="_blank" rel="noopener">redes sociales</a>. Muy pronto habilitaremos este formulario.`
+          : 'Muy pronto habilitaremos este formulario.';
+      }
+    });
+  }
+</script>

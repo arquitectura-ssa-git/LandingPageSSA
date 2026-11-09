@@ -1,0 +1,20 @@
+{
+  "nombre": "Soul Asunción",
+  "visible": true,
+  "destacado": false,
+  "en_portada": false,
+  "categoria": "Otros proyectos",
+  "tipo": "Edificio residencial",
+  "ubicacion": "Asunción, Paraguay",
+  "anio": "2023",
+  "resumen": "",
+  "memoria": "Soul es diseño con alma. Invita a disfrutar de detalles inspirados en el las personas y su forma de vida. Ubicado en la mejor zona de Asuncion, a dos cuadras del shoping del Sol, permite una rapida accesobilidad en auto y a pie, con una gran oferta gastronomica, de retails y corporativa. Por su escala tiene una rapida ejecucion, por lo tanto un retorno rapido de la inversion. Alta rentabilidad en rentas fijas y temporales.\n\nSoul, se compone de 3 niveles de departamentos cuidadosamente estudiados al detalle y de calidad. Tipologias Studio y de 1 dormitorio, luminosas y ventiladas, donde el diseño moderno y funcional son diferenciales. La planta baja de doble altura recibe de una manera destacada. En el mismo piso se ubica el nivel de cocheras. El hall triple altura iluminado y ventilado naturalmente conecta las experiencias entre pisos, no siendo un simple palier, sino un lugar de encuentro.\n\nLos Amenities, se ubican en el ultimo nivel con SUM equipado, terraza con lounge exterior, piscina y Solarium brindan espacios acojedores en medio de la ciudad entre las copas de los arboles de Las Lomas.",
+  "portada": "soul-asuncion-1.webp",
+  "galeria": [
+    "soul-asuncion-2.webp",
+    "soul-asuncion-3.webp",
+    "soul-asuncion-4.webp"
+  ],
+  "creditos": "",
+  "orden": 10
+}

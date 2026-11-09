@@ -29,6 +29,8 @@ El objetivo del MVP es **mostrar obra y generar consultas** ("Cotizá tu proyect
 | 9 | **Cotizá tu proyecto** | Formulario: nombre, email, teléfono, tipo (Residencial / Otros), ubicación, m² aprox., mensaje. Además: WhatsApp. ⚠️ Faltan los datos de contacto. |
 | 10 | **Footer** | Logo, contacto, redes (Instagram, LinkedIn, Facebook), menú, © con año automático. |
 
+**Agregado al MVP:** administrador de contenidos en `/admin` (Sveltia CMS) para cargar obras, memorias e imágenes, ordenarlas, ocultarlas y editar contacto, redes, hitos, proceso, fundadores y reconocimientos. Ver README.
+
 **Fuera del MVP (fase 2):**
 - páginas individuales por proyecto (con las 35 obras);
 - blog;
@@ -39,7 +41,7 @@ El objetivo del MVP es **mostrar obra y generar consultas** ("Cotizá tu proyect
 
 ### Etapas del MVP
 
-**Avance:** ✅ A · ✅ B (en revisión) · ⬜ C · ⬜ D · ⬜ E — vista previa: https://arquitectura-ssa-git.github.io/LandingPageSSA/
+**Avance:** ✅ A · ✅ B · ✅ C (+ administrador de contenidos) · ⬜ D · ⬜ E — vista previa: https://arquitectura-ssa-git.github.io/LandingPageSSA/
 
 | Etapa | Entregable | Quién |
 |---|---|---|

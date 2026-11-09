@@ -1,0 +1,275 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms@0.252.0/schema/sveltia-cms.json
+#
+# Administrador de contenidos de la landing SSA (Sveltia CMS).
+# Cada vez que se guarda un cambio, se crea un commit en GitHub y la web se
+# vuelve a publicar sola en 1–2 minutos.
+
+app_title: SSA · Administrador
+site_url: https://arquitectura-ssa-git.github.io/LandingPageSSA/
+logo:
+  src: /LandingPageSSA/favicon.svg
+
+backend:
+  name: github
+  repo: arquitectura-ssa-git/LandingPageSSA
+  branch: main
+  # Se ingresa con un token personal de GitHub (ver README → Administrador).
+  auth_methods: [token]
+  commit_messages:
+    create: 'Crear {{collection}} “{{slug}}”'
+    update: 'Actualizar {{collection}} “{{slug}}”'
+    delete: 'Eliminar {{collection}} “{{slug}}”'
+    uploadMedia: 'Subir “{{path}}”'
+    deleteMedia: 'Eliminar “{{path}}”'
+
+media_folder: src/content/media
+public_folder: /src/content/media
+
+media_libraries:
+  default:
+    config:
+      slugify_filename: true
+      max_file_size: 26214400 # 25 MB
+      transformations:
+        # Las fotos se achican y convierten a WebP en el navegador antes de subirse.
+        raster_image:
+          format: webp
+          quality: 82
+          width: 2400
+          height: 2400
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+  - name: proyectos
+    label: Proyectos
+    label_singular: Proyecto
+    icon: apartment
+    description: >-
+      Obras que se muestran en la web. Arrastrá para cambiar el orden (botón “Reordenar”),
+      y usá “Mostrar en la web” para ocultar las que ya no quieras publicar.
+    folder: src/content/proyectos
+    path: '{{slug}}/index'
+    format: json
+    extension: json
+    identifier_field: nombre
+    summary: '{{nombre}}'
+    thumbnail: portada
+    reorder:
+      key: orden
+    bulk_edit:
+      fields: [visible, destacado, en_portada, categoria, anio]
+    sortable_fields:
+      fields: [orden, nombre, anio]
+      default:
+        field: orden
+        direction: ascending
+    view_filters:
+      - label: Visibles en la web
+        field: visible
+        eq: true
+      - label: Ocultos
+        field: visible
+        eq: false
+      - label: Destacados
+        field: destacado
+        eq: true
+      - label: Residenciales
+        field: categoria
+        eq: Residenciales
+      - label: Otros proyectos
+        field: categoria
+        eq: Otros proyectos
+    view_groups:
+      - label: Categoría
+        field: categoria
+    table_columns:
+      - _summary
+      - { field: categoria, label: Categoría }
+      - { field: anio, label: Año }
+      - { field: visible, label: En la web }
+      - { field: destacado, label: Destacado }
+    fields:
+      - name: nombre
+        label: Nombre de la obra
+        widget: string
+        hint: Ej. “Casa AM”. Se usa también para el nombre de la carpeta.
+
+      - name: visible
+        label: Mostrar en la web
+        widget: boolean
+        default: true
+        hint: Desactivalo para ocultar la obra sin borrarla (por ejemplo, si ya es muy antigua).
+
+      - name: destacado
+        label: Destacar en la sección Proyectos
+        widget: boolean
+        default: false
+        hint: Se muestran en grande las primeras 3 obras destacadas, según el orden.
+
+      - name: en_portada
+        label: Mostrar en la carátula (imagen principal)
+        widget: boolean
+        default: false
+        hint: Rotan en la imagen de bienvenida, hasta 5 obras, según el orden.
+
+      - name: categoria
+        label: Categoría
+        widget: select
+        options: [Residenciales, Otros proyectos]
+        default: Residenciales
+
+      - name: tipo
+        label: Tipo
+        widget: string
+        required: false
+        hint: Ej. “Vivienda unifamiliar”, “Hotel”, “Edificio en altura”.
+
+      - name: ubicacion
+        label: Ubicación
+        widget: string
+        required: false
+        hint: Ej. “Praderas Country, Yerba Buena”.
+
+      - name: anio
+        label: Año
+        widget: number
+        value_type: int/string
+        min: 1990
+        max: 2100
+        required: false
+
+      - name: superficie
+        label: Superficie (m²)
+        widget: number
+        value_type: int
+        min: 0
+        required: false
+
+      - name: resumen
+        label: Resumen
+        widget: text
+        required: false
+        hint: 1 o 2 líneas. Se muestra junto a las obras destacadas.
+
+      - name: memoria
+        label: Memoria descriptiva
+        widget: text
+        required: false
+        hint: Texto completo de la obra. Dejá una línea en blanco entre párrafos.
+
+      - name: portada
+        label: Imagen de portada
+        widget: image
+        hint: Foto principal (horizontal, idealmente de 2400 px de ancho o más). Se optimiza sola al subirla.
+
+      - name: galeria
+        label: Galería
+        widget: image
+        multiple: true
+        max: 12
+        required: false
+        hint: Fotos adicionales que se ven al abrir la obra. Podés arrastrarlas para cambiar el orden.
+
+      - name: creditos
+        label: Créditos de imagen
+        widget: string
+        required: false
+        hint: 'Ej. “Fotografía: Nombre Apellido” o “Render: Estudio”.'
+
+singletons:
+  - name: sitio
+    label: Configuración del sitio
+    icon: settings
+    file: src/content/sitio.json
+    format: json
+    fields:
+      - name: frase_portada
+        label: Frase de la carátula
+        widget: string
+        hint: Frase corta sobre la imagen principal.
+
+      - name: contacto
+        label: Datos de contacto
+        widget: object
+        hint: Los campos vacíos no se muestran en la web.
+        fields:
+          - name: whatsapp
+            label: WhatsApp
+            widget: string
+            required: false
+            hint: Con código de país y área, sin espacios. Ej. 5493811234567. Activa el botón “Enviar por WhatsApp”.
+          - name: email
+            label: Email para consultas
+            widget: string
+            required: false
+            hint: Activa el botón “Enviar por email”.
+          - name: telefono
+            label: Teléfono
+            widget: string
+            required: false
+          - name: direccion
+            label: Dirección del estudio
+            widget: string
+            required: false
+
+      - name: redes
+        label: Redes sociales
+        widget: object
+        fields:
+          - { name: instagram, label: Instagram (enlace), widget: string, required: false }
+          - { name: linkedin, label: LinkedIn (enlace), widget: string, required: false }
+          - { name: facebook, label: Facebook (enlace), widget: string, required: false }
+
+      - name: hitos
+        label: Hitos (números destacados)
+        label_singular: Hito
+        widget: list
+        max: 6
+        summary: '{{prefijo}}{{valor}} {{etiqueta}}'
+        fields:
+          - { name: valor, label: Número, widget: number, value_type: int, min: 0 }
+          - { name: prefijo, label: Prefijo, widget: string, required: false, hint: 'Opcional. Ej. “+”.' }
+          - { name: etiqueta, label: Texto, widget: string, hint: 'Ej. “Proyectos”.' }
+
+  - name: estudio
+    label: Estudio
+    icon: groups
+    file: src/content/estudio.json
+    format: json
+    fields:
+      - name: proceso
+        label: Proceso (etapas)
+        label_singular: Etapa
+        widget: list
+        summary: '{{titulo}}'
+        fields:
+          - { name: titulo, label: Etapa, widget: string }
+          - { name: texto, label: Descripción, widget: text }
+
+      - name: fundadores
+        label: Fundadores
+        label_singular: Fundador
+        widget: list
+        summary: '{{nombre}}'
+        fields:
+          - { name: nombre, label: Nombre, widget: string }
+          - { name: titulo, label: Título, widget: string, required: false, hint: 'Ej. “Arquitecto · MBA”.' }
+          - { name: foto, label: Retrato, widget: image, required: false }
+          - name: bio
+            label: Biografía
+            widget: text
+            required: false
+            hint: El primer párrafo se ve siempre; el resto con “Leer más”. Dejá una línea en blanco entre párrafos.
+
+      - name: reconocimientos
+        label: Reconocimientos
+        label_singular: Reconocimiento
+        widget: list
+        summary: '{{anio}} · {{titulo}}'
+        fields:
+          - { name: anio, label: Año, widget: number, value_type: int/string, required: false }
+          - { name: titulo, label: Premio o distinción, widget: string }
+          - { name: detalle, label: Detalle, widget: string, required: false }

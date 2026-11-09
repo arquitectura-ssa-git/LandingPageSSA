@@ -1,0 +1,46 @@
+---
+import { estudio } from '../lib/contenido';
+const pasos = estudio.proceso;
+---
+<section class="proceso" id="proceso" aria-labelledby="proceso-title">
+  <div class="wrap">
+    <header class="grid proceso-head">
+      <p class="label label-bracket proceso-label" data-reveal>03 — Proceso</p>
+      <h2 class="proceso-title" id="proceso-title" data-reveal style="--delay:.06s">
+        Del primer croquis al proyecto ejecutivo, <span class="muted">en etapas sucesivas y claras.</span>
+      </h2>
+    </header>
+
+    <ol class="pasos" style={`--n:${Math.max(pasos.length, 1)}`}>
+      {pasos.map((p, i) => (
+        <li class="paso" data-reveal style={`--delay:${0.08 * i}s`}>
+          <span class="paso-n">{String(i + 1).padStart(2, '0')}</span>
+          <h3 class="paso-title">{p.titulo}</h3>
+          {p.texto && <p>{p.texto}</p>}
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .proceso { background: var(--smoky-black); color: var(--cultured); padding: clamp(88px, 11vw, 180px) 0; }
+  .proceso-head { row-gap: 16px; margin-bottom: clamp(56px, 7vw, 112px); }
+  .proceso-label { grid-column: 1 / span 2; color: rgba(242, 242, 242, 0.5); padding-top: 0.5em; }
+  .proceso-title { grid-column: 3 / -1; font-size: var(--fs-h2); line-height: 1.2; max-width: 30ch; }
+  .muted { color: rgba(242, 242, 242, 0.5); }
+
+  .pasos { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: var(--gutter); }
+  .paso { display: flex; flex-direction: column; gap: 14px; padding-top: 22px; border-top: 1px solid var(--line-dark); padding-right: 12%; }
+  .paso-n { font-size: clamp(2rem, 1.5rem + 1.6vw, 3rem); font-weight: 300; letter-spacing: -0.03em; line-height: 1; color: rgba(242, 242, 242, 0.35); }
+  .paso-title { font-size: clamp(1.25rem, 1.05rem + 0.6vw, 1.625rem); }
+  .paso p { color: rgba(242, 242, 242, 0.65); font-size: 0.9375rem; }
+
+  @media (max-width: 1280px) {
+    .proceso-label, .proceso-title { grid-column: 1 / -1; }
+  }
+  @media (max-width: 720px) {
+    .pasos { grid-template-columns: 1fr; row-gap: 36px; }
+    .paso { padding-right: 0; }
+  }
+</style>

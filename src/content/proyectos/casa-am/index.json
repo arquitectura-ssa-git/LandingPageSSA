@@ -1,0 +1,20 @@
+{
+  "nombre": "Casa AM",
+  "visible": true,
+  "destacado": false,
+  "en_portada": true,
+  "categoria": "Residenciales",
+  "tipo": "Vivienda unifamiliar",
+  "ubicacion": "Praderas Country, Yerba Buena",
+  "anio": "2025",
+  "resumen": "",
+  "memoria": "Ubicada en Yerba Buena, Tucumán (Argentina), Casa AM se proyecta en diálogo con su entorno natural, próximo al cerro San Javier. Su orientación norte fue clave para definir una estrategia arquitectónica pasiva que aprovecha la luz solar en invierno y protege del calor en verano, mediante patios interiores, pantallas solares y un cuidadoso diseño de fachadas.\n\nEl proyecto se organiza a partir de dos ejes longitudinales —servicios y habitaciones— conectados por una secuencia de patios que articulan la circulación y generan espacios fluidos y luminosos. Las variaciones de altura en los distintos sectores enriquecen la experiencia espacial y definen áreas sociales, privadas y de transición con identidad propia.\n\nA diferencia de esquemas tradicionales, los dormitorios se ubican hacia el frente para captar mejor el asoleamiento invernal, resguardados por tamices que preservan la privacidad y filtran la luz. La materialidad combina hormigón visto y texturas cálidas en madera, generando una envolvente sólida y acogedora.\n\nUno de los aspectos más innovadores es el uso de carpinterías de alto rendimiento con vidrios KNT y DVH, que permiten aperturas amplias, continuidad interior-exterior y alto confort térmico y acústico. Casa AM es una propuesta sensible al clima y al lugar, que prioriza la calidad espacial, el diseño sostenible y la conexión con el paisaje.",
+  "portada": "casa-am-1.webp",
+  "galeria": [
+    "casa-am-2.webp",
+    "casa-am-3.webp",
+    "casa-am-4.webp"
+  ],
+  "creditos": "",
+  "orden": 4
+}

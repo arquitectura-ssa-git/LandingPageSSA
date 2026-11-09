@@ -1,0 +1,20 @@
+{
+  "nombre": "Hotel del Golf",
+  "visible": true,
+  "destacado": false,
+  "en_portada": false,
+  "categoria": "Otros proyectos",
+  "tipo": "Hotel",
+  "ubicacion": "San Pablo Country, Tucumán",
+  "anio": "2023",
+  "resumen": "",
+  "memoria": "El proyecto del hotel se inserta en un entorno natural único, al pie del cerro en el interior del San Pablo Country, lindante al Club House, pileta, canchas de tenis, laguna y golf. El predio propio es de 10.000 m2, esto le confiere a la implantación un perímetro libre con vistas privilegiadas 360º, tanto hacia la ciudad, como hacia el cerro y al golf. En este entorno el edificio se implanta y se inspira de su contexto natural.\n\nToma las curvas del cerro, y las reinterpreta en una estructura conceptual lineal de eje quebrado con suaves ondulaciones. El Edificio se compone de tres niveles, articulados en su punto medio por el gran Lobby doble altura y acceso, conectados por ascensor y escaleras de escape contra incendio. Un medio nivel hacia abajo propone el lugar para los autos y servicios, despejando así los jardines para el disfrute.\n\nEl Piano Nobile se constituye en una porción de la planta baja, compuesta por una bandeja horizontal lineal que se “despega” del terreno natural, y genera vistas, tanto de las habitaciones en este nivel como en los amenities que en ella se encuentran, complementandose con terrazas de desborde que vinculan a través de caminerías con el clubhouse, donde se ubicaran los salones de conferencias, gym y Spa. La cancha de golf y las canchas de tenis.\n\nEn la Planta alta, se ubican habitaciones y las Corner-Suites con terrazas y vistas al Golf. El proyecto consiste en dos etapas, una primera etapa contará con 36 Habitaciones de 33m2 y tres de las cuales son Suites de 66m2, consejerías, Restaurante-bar, Lobby y Front Desk, Oficinas de Gerencia, Guardaequipaje y Cocina, Lavadero, depósitos, áreas de carga y descarga, basureros, estacionamientos de cortesía.\n\nLa misma tendrá una superficie de 2950,58 m² + 1646,64 m² de estacionamiento soterrado, con capacidad de 40 vehículos y la segunda etapa contará con 20 habitaciones con una superficie total edificada de 1282,90 m² mas cocheras. La arquitectura se define contemporánea tanto en su estructuración formal, como en su materialidad con la predominancia del Hormigón Visto, la madera y la piedra, combinación de elementos naturales que le confiere su carácter.",
+  "portada": "hotel-del-golf-1.webp",
+  "galeria": [
+    "hotel-del-golf-2.webp",
+    "hotel-del-golf-3.webp",
+    "hotel-del-golf-4.webp"
+  ],
+  "creditos": "",
+  "orden": 11
+}

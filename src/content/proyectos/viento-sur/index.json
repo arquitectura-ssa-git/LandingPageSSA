@@ -1,0 +1,20 @@
+{
+  "nombre": "Viento Sur",
+  "visible": true,
+  "destacado": false,
+  "en_portada": false,
+  "categoria": "Otros proyectos",
+  "tipo": "",
+  "ubicacion": "Tucumán",
+  "anio": "2020",
+  "resumen": "",
+  "memoria": "",
+  "portada": "viento-sur-1.webp",
+  "galeria": [
+    "viento-sur-2.webp",
+    "viento-sur-3.webp",
+    "viento-sur-4.webp"
+  ],
+  "creditos": "",
+  "orden": 27
+}

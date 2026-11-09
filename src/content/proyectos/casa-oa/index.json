@@ -1,0 +1,20 @@
+{
+  "nombre": "Casa OA",
+  "visible": true,
+  "destacado": false,
+  "en_portada": false,
+  "categoria": "Residenciales",
+  "tipo": "Vivienda unifamiliar",
+  "ubicacion": "Country La Cité",
+  "anio": "2022",
+  "resumen": "",
+  "memoria": "Un proyecto extendido en planta baja en un hermoso terreno paralelo en su longitud al cerro en La Cité Country, Tafí Viejo. Vistas panorámicas potentes, relacionan la arquitectura con la espectacularidad del fondo. El conjunto de la vivienda se organiza lineal, con su centro claro y definido en un gran espacio de altura y media, el gran estar y chimenea, como centro familiar y espacio de llegada. Esta casa puede describirse mejor en su recorrido dentro de ella.\n\nEl diseño de este proyecto, se inicia en la entrada como un gran atrio de recepción. Este centro articula, hacia la derecha el espacio privado que se une a través de un conector espacial, que vincula, pero separa el área silenciosa e íntima de dormitorios. Hacia la izquierda, en cambio las conexiones son más fluidas y continuas donde encontramos las áreas sociales y los servicios de la casa.\n\nEl quincho, un elemento constante en la arquitectura de viviendas del norte de Argentina, encuentra un protagonismo desde su posición estratégica y dominante del jardín, y su expansión espacial frente-fondo donde permite empleara la cochera como espacio de crecimiento semicubierto, articulado por un gran patio cuadrado que lo mantiene vinculado pero separado para el función diaria, que permite ingresar sin entrar a la casa, y puede aprovechar de su espacio cuando la reunión lo requiera de manera flexible.\n\nEjes quebrando en plantas y alturas variables en sección, esta casa predominantemente espacial, con rica morfología interna y volúmenes puros al exterior, cerrada al frente y abierta al fondo, con patios internos, luces y sombras, lugares especiales, rincones que aseguran una hermosa experiencia cambiante durante su recorrido.",
+  "portada": "casa-oa-1.webp",
+  "galeria": [
+    "casa-oa-2.webp",
+    "casa-oa-3.webp",
+    "casa-oa-4.webp"
+  ],
+  "creditos": "",
+  "orden": 18
+}

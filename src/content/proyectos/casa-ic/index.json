@@ -1,0 +1,20 @@
+{
+  "nombre": "Casa IC",
+  "visible": true,
+  "destacado": true,
+  "en_portada": true,
+  "categoria": "Residenciales",
+  "tipo": "Vivienda unifamiliar",
+  "ubicacion": "San Pablo Country, San Pablo, Tucumán",
+  "anio": "2024",
+  "resumen": "Vivienda al pie del cerro en San Pablo Country, organizada en torno a un gran espacio en doble altura con una escalera escultórica helicoidal.",
+  "memoria": "Ubicada en Tucuman, al pie del cerro en San Pablo Country, esta casa se encuentra implantada en un entorno predominantemente natural, verde y con grandes y amplias visuales. Es por ello, que se plantea aprovechar esas condiciones de contexto, generando un gran espacio contundente en doble altura. Este espacio recibe, alberga desde la llegada, al estar, comedor y galeria.\n\nSe caracteriza por una gran escalera escultorica helicoidal que divide el espacio en dos areas funcionales, claramente con distintos gradientes de privacidad. En la otra ala, de dos niveles, se ubican los espacios de apoyatura en planta baja, desde escritorio en frente al playroom en el fondo, pasando por los espacios de servicio y cocina. En la planta alta se ubican dos Junior Suites y la Master Suite, con terraza e hidromasaje exterior con vistas al cerro.\n\nLas plantas de dormitorios se conectan circulatoria y funcionalmente con ascensor y ademas con ductos de ropa sucia. Las circulaciones longitudinales son muros equipados que albergan, despensas, placares de blanco, depositos, placares tecnicos etc. El quincho y el playroom se conectan con puertas corredizas que integran cuando se requiere y se pueden separar para el dia a dia. A su vez estos espacios se vinculan al jardin, a la pileta y solarium.\n\nEl jardin tiene acceso a la cancha de golf y por tanto, vistas profundas con paisajes increíbles del pedemonte.",
+  "portada": "casa-ic-1.webp",
+  "galeria": [
+    "casa-ic-2.webp",
+    "casa-ic-3.webp",
+    "casa-ic-4.webp"
+  ],
+  "creditos": "",
+  "orden": 3
+}

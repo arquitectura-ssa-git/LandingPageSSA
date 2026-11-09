@@ -1,6 +1,6 @@
 ---
 import { Picture } from 'astro:assets';
-import { heroSlides } from '../data/proyectos';
+import { proyectosPortada as heroSlides, sitio, metaProyecto } from '../lib/contenido';
 import { site } from '../data/site';
 
 const total = String(heroSlides.length).padStart(2, '0');
@@ -11,7 +11,7 @@ const SLIDE_MS = 7000; // tiempo que se muestra cada obra
     {heroSlides.map((p, i) => (
       <div class:list={['hero-slide', { 'is-active': i === 0 }]} data-slide>
         <Picture
-          src={p.imagen}
+          src={p.portada}
           alt=""
           formats={['avif', 'webp']}
           widths={[640, 960, 1280, 1920, 2400]}
@@ -30,7 +30,7 @@ const SLIDE_MS = 7000; // tiempo que se muestra cada obra
       <p class="label label-bracket hero-kicker" data-reveal>Oficina de arquitectura</p>
 
       <h1 class="hero-title" data-reveal style="--delay:.1s">
-        Arquitectura que trasciende.
+        {sitio.frasePortada}
       </h1>
 
       <div class="hero-actions" data-reveal style="--delay:.2s">
@@ -45,7 +45,7 @@ const SLIDE_MS = 7000; // tiempo que se muestra cada obra
           <p class:list={['caption', { 'is-active': i === 0 }]} data-caption>
             <span class="caption-n">{String(i + 1).padStart(2, '0')} / {total}</span>
             <span class="caption-name">{p.nombre}</span>
-            <span class="caption-meta">{p.tipo} · {p.ubicacion}</span>
+            <span class="caption-meta">{metaProyecto(p)}</span>
           </p>
         ))}
       </div>

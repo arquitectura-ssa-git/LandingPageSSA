@@ -1,0 +1,21 @@
+{
+  "nombre": "Vilabonita",
+  "visible": true,
+  "destacado": true,
+  "en_portada": false,
+  "categoria": "Otros proyectos",
+  "tipo": "Conjunto residencial",
+  "ubicacion": "Yerba Buena",
+  "anio": "2023",
+  "superficie": 20000,
+  "resumen": "Conjunto de 20.000 m² de edificios de media densidad sobre un terreno de 3,5 ha, cuya implantación se definió con un algoritmo de diseño propio.",
+  "memoria": "Emplazadas sobre un terreno de 3,5 has., nos encargan el conjunto de 20.000 m2 de edificios de media densidad de 4 niveles. Condición: Etapabilizable. Las preguntas que nos surgieron primero es cual es la versión más eficiente de división de etapas.\n\nLa primera en descartar sería la opción No estabilizable de un único edificio de la totalidad de superficie, pero luego aparecen las múltiples posibilidades: 2 de 10.000 m2, 3 blocks de 6.666,66 m2, u otras alternativas 4 de 5 mil, etc. entran en juego aquí los espacios intersticiales óptimos entre edificios. Para lo cual debemos conjugar con otros parámetros.\n\nLa segunda condición; es que aproveche las mejores vistas, según la orientación del terreno, aquello ya nos generaba una serie de variables con las que íbamos a jugar en nuestros diseños, la tercera condición, que nos ayuda a tomar partido en cuanto a restricciones es la relación de áreas y espacios comunes sobre áreas totales no supere el 20%. Entonces nos pusimos manos a la obra.\n\nCon la cantidad de opciones que teníamos a la mano, nos propusimos que debe ser más de un bloque, y tienen que estar dispuestos de tal manera que la superposición de las caras de los edificios no interrumpa las visuales, ni pierdan intimidad, y aproveche la mejor orientación, y que en cada edificio no haya más de un 20% de espacios comunes. Entonces, diseñamos un algoritmo que nos ayude a tomar la mejor decisión de implantación.\n\nEmpleamos un algoritmo de generación, donde la premisa incorporada a la ecuación decía que a mayor porcentaje de superposición de las caras, la separación entre bloques debía aumentar. Pudiendo los edificios acercarse cuando menos superpuestas se encontrarán sus fachadas y alejarse en el caso contrario.\n\nDe todas las variantes analizadas, la que mejor se adaptaba a las premisas de diseño fue una distribución ortogonal de los edificios con implantación radial, y esta distribución cumple con el input de el mayor porcentaje de fachadas del conjunto aprovecha orientaciones y vistas, también surgió que la mejor alternativa de etapas fuera desarrollar 6 edificios ya que la eficiencia de planta por la relación de espacios comunes sobre superficie total alcanzó el 18%.\n\nGenerando además la mayor distancia a las viviendas.",
+  "portada": "vilabonita-1.webp",
+  "galeria": [
+    "vilabonita-2.webp",
+    "vilabonita-3.webp",
+    "vilabonita-4.webp"
+  ],
+  "creditos": "",
+  "orden": 2
+}

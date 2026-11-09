@@ -1,0 +1,20 @@
+{
+  "nombre": "Casa AR",
+  "visible": true,
+  "destacado": false,
+  "en_portada": false,
+  "categoria": "Residenciales",
+  "tipo": "Vivienda unifamiliar",
+  "ubicacion": "Yerba Buena, Tucumán",
+  "anio": "2024",
+  "resumen": "",
+  "memoria": "Ubicada en un lote de 2.500 m² dentro del entorno natural de Praderas, Casa AR es una vivienda contemporánea que combina funcionalidad, privacidad y un fuerte carácter material. El proyecto se organiza a partir de un eje longitudinal que articula los espacios principales, desde el acceso hasta la piscina, generando una secuencia fluida y armónica. El diseño responde a tres ejes fundamentales: Implantación estratégica en el terreno, con una clara separación funcional.\n\nPrivacidad sin renunciar a la luz natural, mediante filtros visuales y aperturas controladas. Materialidad expresiva, con el hormigón visto como protagonista, que aporta sobriedad, coherencia y durabilidad. La casa se abre en forma de “L” hacia el jardín, integrando interior y exterior a través de la galería, el quincho y la piscina. Casa AR representa una arquitectura honesta, pensada para una vida contemporánea en diálogo con su entorno.",
+  "portada": "casa-ar-1.webp",
+  "galeria": [
+    "casa-ar-2.webp",
+    "casa-ar-3.webp",
+    "casa-ar-4.webp"
+  ],
+  "creditos": "Fotografía: Rocío Checa",
+  "orden": 7
+}

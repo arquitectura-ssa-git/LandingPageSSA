@@ -1,0 +1,19 @@
+{
+  "nombre": "Medical Center San Pablo Life",
+  "visible": true,
+  "destacado": false,
+  "en_portada": false,
+  "categoria": "Otros proyectos",
+  "tipo": "Centro médico",
+  "ubicacion": "San Pablo Country, Tucumán",
+  "anio": "2023",
+  "resumen": "",
+  "memoria": "Emplazado al norte del acceso principal de San Pablo Country, en un terreno de 5.214 m2, sobre Av. Solano Vera, rodeado del Campo de Golf y majestuosas vistas al Cerro San Javier.\n\nEl edificio de 1.800 m2 totales (FOS 22% y FOT 35%), se organiza en planta formando un paralelogramo, configurados por la sumatoria geométrica de dos edificios lineales de eje quebrado de simple crujía, que tiene por resultante un vacío interior contenido, un patio seco desborde de las áreas comunes de circulación y espera al aire libre. Ambos edificios se conectan por un puente a nivel, generando el otro límite del espacio interior, y vinculando las dos etapas.\n\nLa primera etapa que se desarrolla en planta baja, cuenta con 500 m2, 16 consultorios de 3,00 x 4,00 m y 1 de 3,00 x 6,00 m, Hall de recepción, espera y servicios, . La segunda etapa, de 1.300 m2, presenta dos niveles con doble acceso no directos. El ingreso se produce a través de la plaza de acceso común y recepción de la etapa 1.\n\nPor otro lado, la etapa 2 tiene un Laboratorio de análisis bioquímicos, con entrada independiente, y acceso al interior del edificio, que cuenta con 4 quirófanos para cirugías mínimas ambulatorias, con sus respectivos servicios y Salas de estudios. En planta alta a través de ascensor y escalera, se localizan 8 salas de recuperación, en Suite con Vista al Golf, sector de enfermería, espera y 3 consultorios especiales.\n\nCada Etapa posee su parking propio, y acceso a través de la colectora interna, paralela a la ruta.",
+  "portada": "medical-center-san-pablo-life-1.webp",
+  "galeria": [
+    "medical-center-san-pablo-life-2.webp",
+    "medical-center-san-pablo-life-3.webp"
+  ],
+  "creditos": "",
+  "orden": 12
+}

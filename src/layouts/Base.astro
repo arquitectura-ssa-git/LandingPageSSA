@@ -1,9 +1,9 @@
 ---
 import '../styles/global.css';
 import { site } from '../data/site';
+import { sitio, proyectosPortada } from '../lib/contenido';
 import fontLight from '../assets/fonts/CreatoDisplay-Light.woff2?url';
 import fontRegular from '../assets/fonts/CreatoDisplay-Regular.woff2?url';
-import ogImage from '../assets/proyectos/san-pablo-life-01.jpg';
 import { getImage } from 'astro:assets';
 
 interface Props {
@@ -14,7 +14,7 @@ const { title = site.title, description = site.description } = Astro.props;
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const og = await getImage({ src: ogImage, width: 1200, height: 630, format: 'jpg', fit: 'cover' });
+const og = await getImage({ src: proyectosPortada[0].portada, width: 1200, height: 630, format: 'jpg', fit: 'cover' });
 const ogUrl = new URL(og.src, Astro.site);
 
 const jsonLd = {
@@ -28,7 +28,9 @@ const jsonLd = {
   foundingDate: String(site.since),
   areaServed: 'Argentina',
   address: { '@type': 'PostalAddress', addressRegion: 'Tucumán', addressCountry: 'AR' },
-  ...(site.contact.email && { email: site.contact.email }),
+  ...(sitio.contacto.email && { email: sitio.contacto.email }),
+  ...(sitio.contacto.telefono && { telephone: sitio.contacto.telefono }),
+  ...(sitio.redes.length && { sameAs: sitio.redes.map((r) => r.href) }),
 };
 ---
 <!doctype html>

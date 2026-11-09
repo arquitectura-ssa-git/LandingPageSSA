@@ -1,0 +1,20 @@
+{
+  "nombre": "VDM",
+  "visible": true,
+  "destacado": false,
+  "en_portada": false,
+  "categoria": "Otros proyectos",
+  "tipo": "Edificio en altura",
+  "ubicacion": "San Miguel de Tucumán, Tucumán",
+  "anio": "2021",
+  "resumen": "",
+  "memoria": "Un proyecto ubicado en la ciudad de San miguel de Tucuman . El desafio de desarrollar un edificio de 11 niveles en un frente de 6.50m se resuelve con amplios espacios interiores en este proyecto --- El coronamiento del edificio en doble altura a una escala macro de ciudad jerarquizando el remate del mismo. Amplias terrazas de dimensiones funcionales que permiten expandir el uso de los espacios interiores hacia la ciudad",
+  "portada": "vdm-1.webp",
+  "galeria": [
+    "vdm-2.webp",
+    "vdm-3.webp",
+    "vdm-4.webp"
+  ],
+  "creditos": "",
+  "orden": 23
+}

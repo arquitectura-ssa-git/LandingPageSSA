@@ -1,0 +1,69 @@
+---
+import { sitio } from '../lib/contenido';
+const hitos = sitio.hitos;
+---
+{hitos.length > 0 && (
+  <section class="hitos" aria-label="Trayectoria en números">
+    <div class="wrap">
+      <ul class="hitos-list" style={`--n:${hitos.length}`}>
+        {hitos.map((h, i) => (
+          <li class="hito" data-reveal style={`--delay:${0.08 * i}s`}>
+            <span class="hito-num">
+              {h.prefijo}<span data-count={h.valor}>{h.valor.toLocaleString('es-AR')}</span>
+            </span>
+            <span class="hito-label label">{h.etiqueta}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
+
+<style>
+  .hitos { background: var(--cultured); padding-bottom: clamp(72px, 9vw, 140px); }
+  .hitos-list {
+    display: grid;
+    grid-template-columns: repeat(var(--n), minmax(0, 1fr));
+    gap: var(--gutter);
+    border-top: 1px solid var(--line-light);
+  }
+  .hito { display: flex; flex-direction: column; gap: 10px; padding-top: 24px; }
+  .hito-num {
+    font-size: clamp(2rem, 1.5rem + 1.8vw, 3.25rem);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .hito-label { color: var(--sonic-silver); }
+  @media (max-width: 720px) {
+    .hitos-list { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 28px; }
+  }
+</style>
+
+<script>
+  // Contador animado al entrar en pantalla
+  const nums = document.querySelectorAll<HTMLElement>('[data-count]');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        io.unobserve(e.target);
+        const el = e.target as HTMLElement;
+        const target = Number(el.dataset.count) || 0;
+        const start = performance.now();
+        const dur = 1400;
+        const tick = (now: number) => {
+          const t = Math.min(1, (now - start) / dur);
+          const eased = 1 - Math.pow(1 - t, 3);
+          el.textContent = Math.round(target * eased).toLocaleString('es-AR');
+          if (t < 1) requestAnimationFrame(tick);
+        };
+        el.textContent = '0';
+        requestAnimationFrame(tick);
+      }
+    }, { threshold: 0.6 });
+    nums.forEach((n) => io.observe(n));
+  }
+</script>

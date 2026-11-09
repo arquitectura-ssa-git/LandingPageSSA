@@ -1,0 +1,20 @@
+{
+  "nombre": "Casa MM",
+  "visible": true,
+  "destacado": false,
+  "en_portada": false,
+  "categoria": "Residenciales",
+  "tipo": "Vivienda unifamiliar",
+  "ubicacion": "San Pablo Country & Golf - Tucumán",
+  "anio": "2017",
+  "resumen": "",
+  "memoria": "Un proyecto en un terreno único. Ubicado en el remate del cul de sac con vistas al golf, entre el hoyo 1 y 18, el telón de fondo con el cerro San Javier. El terreno con desniveles nos permitió estructurar el proyecto para que todos los espacios puedan ser parte de este entorno, con un nivel apoyado en la cota superior generando tres niveles, uno a nivel de la calle con la cochera, el espacio central social y el nivel superior con los dormitorios.\n\nLa jerarquía de un espacio en particular se destaca en el nivel social, el quincho contemporáneo.\n\nEste espacio se constituye en el espacio social principal, dejando de lado el antiguo living-comedor, por un espacio familiar convirtiéndose en un espacio desestructurado que se eleva por las condiciones del terreno, y tiene la doble visual, hacia el frente las vistas de la ciudad, mas atractivas en la noche, y durante el dia el cerro, para lo cual hacemos un giro de planta que orienta el espacio hacia el tee del hoyo 18, generando una vista profunda y evitando la confrontación de la casa vecina.\n\nLos aleros de 4m sin columnas, losas sin vigas ostentan un gran estudio estructural y formal, en favor de la calidad del espacio interior.",
+  "portada": "casa-mm-1.webp",
+  "galeria": [
+    "casa-mm-2.webp",
+    "casa-mm-3.webp",
+    "casa-mm-4.webp"
+  ],
+  "creditos": "",
+  "orden": 35
+}

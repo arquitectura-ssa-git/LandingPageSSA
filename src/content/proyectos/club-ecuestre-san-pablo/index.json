@@ -1,0 +1,20 @@
+{
+  "nombre": "Club Ecuestre San Pablo",
+  "visible": true,
+  "destacado": false,
+  "en_portada": false,
+  "categoria": "Otros proyectos",
+  "tipo": "Club ecuestre",
+  "ubicacion": "San Pablo Country, Tucumán",
+  "anio": "2023",
+  "resumen": "",
+  "memoria": "",
+  "portada": "club-ecuestre-san-pablo-1.webp",
+  "galeria": [
+    "club-ecuestre-san-pablo-2.webp",
+    "club-ecuestre-san-pablo-3.webp",
+    "club-ecuestre-san-pablo-4.webp"
+  ],
+  "creditos": "",
+  "orden": 13
+}

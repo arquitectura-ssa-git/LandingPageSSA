@@ -1,0 +1,20 @@
+{
+  "nombre": "Casa DC",
+  "visible": true,
+  "destacado": false,
+  "en_portada": false,
+  "categoria": "Residenciales",
+  "tipo": "Vivienda unifamiliar",
+  "ubicacion": "San Pablo Country",
+  "anio": "2019",
+  "resumen": "",
+  "memoria": "Superificie 469.98 m2. La vivienda se emplaza en el Barrio Privado San Pablo, en un terreno con orientación Este - Oeste. La vivienda se desarrolla en un nivel planta baja con un lenguaje moderno, de líneas rectas, materiales nobles y espacios de gran iluminación y ventilación natural.\n\nEl Acceso Principal se encuentra orientado a las áreas sociales, tales como el comedor y estar, y el sector cocina y comedor diario, que desborden hacia la galería y exteriores, articulando los espacios de servicios en un núcleo. La escalera se articula hacia la suite principal con baño privado y vestidor, y la circulación distribuye lateralmente dos habitaciones, y una dormitorio para huespedes ,un baño y antebaño.\n\nLa orientación de la vivienda favorece a las mejores visuales que brinda el entorno (Cerro hacia el Oeste) generando intimidad de los sectores privados y desbordando por completo los espacios sociales hacia el patio jardín.\n\nResuelta con materiales nobles de tecnología constructiva tradicional y terminaciones de primera calidad, esta vivienda se convierte en una opción única para disfrutar de un entorno familiar en un country consolidado, cerca de la ciudad y con rápida accesibilidad.",
+  "portada": "casa-dc-1.webp",
+  "galeria": [
+    "casa-dc-2.webp",
+    "casa-dc-3.webp",
+    "casa-dc-4.webp"
+  ],
+  "creditos": "",
+  "orden": 31
+}

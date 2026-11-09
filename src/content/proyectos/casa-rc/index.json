@@ -1,0 +1,20 @@
+{
+  "nombre": "Casa RC",
+  "visible": true,
+  "destacado": false,
+  "en_portada": false,
+  "categoria": "Residenciales",
+  "tipo": "Vivienda unifamiliar",
+  "ubicacion": "",
+  "anio": "2019",
+  "resumen": "",
+  "memoria": "",
+  "portada": "casa-rc-1.webp",
+  "galeria": [
+    "casa-rc-2.webp",
+    "casa-rc-3.webp",
+    "casa-rc-4.webp"
+  ],
+  "creditos": "",
+  "orden": 30
+}

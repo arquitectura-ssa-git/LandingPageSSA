@@ -1,0 +1,276 @@
+---
+import { getImage } from 'astro:assets';
+import { proyectos, formatM2 } from '../lib/contenido';
+
+// Datos de cada obra con sus imágenes optimizadas, para la vista ampliada.
+const data = await Promise.all(
+  proyectos.map(async (p) => {
+    const fotos = [p.portada, ...p.galeria];
+    const imagenes = await Promise.all(
+      fotos.map(async (src, i) => {
+        const img = await getImage({ src, widths: [900, 1600], format: 'webp', quality: 80 });
+        return {
+          src: img.src,
+          srcset: img.srcSet.attribute,
+          w: src.width,
+          h: src.height,
+          alt: `${p.nombre} — imagen ${i + 1} de ${fotos.length}`,
+        };
+      }),
+    );
+    const datos = [
+      ['Categoría', p.categoria],
+      ['Tipo', p.tipo],
+      ['Ubicación', p.ubicacion],
+      ['Año', p.anio ? String(p.anio) : ''],
+      ['Superficie', p.superficie ? formatM2(p.superficie) : ''],
+    ].filter(([, v]) => v);
+    return {
+      slug: p.slug,
+      nombre: p.nombre,
+      datos,
+      memoria: p.memoria.length ? p.memoria : p.resumen ? [p.resumen] : [],
+      creditos: p.creditos,
+      imagenes,
+    };
+  }),
+);
+---
+<dialog class="pd" id="proyecto-dialog" aria-labelledby="pd-title" data-pd>
+  <div class="pd-inner">
+    <header class="pd-top">
+      <p class="label label-bracket pd-count" data-pd-index></p>
+      <button type="button" class="pd-close" data-pd-close>
+        Cerrar <span aria-hidden="true">×</span>
+      </button>
+    </header>
+
+    <div class="pd-body">
+      <div class="pd-gallery">
+        <figure class="pd-figure">
+          <img data-pd-img alt="" sizes="(max-width: 900px) 100vw, 64vw" />
+        </figure>
+        <div class="pd-nav">
+          <button type="button" class="pd-arrow" data-pd-prev aria-label="Imagen anterior">←</button>
+          <span class="pd-imgcount label" data-pd-imgcount></span>
+          <button type="button" class="pd-arrow" data-pd-next aria-label="Imagen siguiente">→</button>
+        </div>
+      </div>
+
+      <div class="pd-info">
+        <h2 class="pd-title" id="pd-title" data-pd-title></h2>
+        <dl class="pd-datos" data-pd-datos></dl>
+        <div class="pd-memoria" data-pd-memoria></div>
+        <p class="pd-creditos label" data-pd-creditos></p>
+        <a href="#contacto" class="link-arrow pd-cta" data-pd-close-link>Cotizá un proyecto similar <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script type="application/json" id="proyectos-data" set:html={JSON.stringify(data)} />
+
+<style>
+  .pd {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: var(--smoky-black);
+    color: var(--cultured);
+  }
+  .pd::backdrop { background: rgba(18, 18, 18, 0.9); }
+  .pd[open] { animation: pd-in 0.45s var(--ease); }
+  @keyframes pd-in { from { opacity: 0; } to { opacity: 1; } }
+
+  .pd-inner {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--margin) calc(24px + env(safe-area-inset-bottom));
+  }
+  .pd-top {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-h);
+    background: var(--smoky-black);
+  }
+  .pd-count { color: rgba(242, 242, 242, 0.55); }
+  .pd-close {
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 0; background: none; color: inherit; cursor: pointer;
+    font: inherit; font-size: var(--fs-label); font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+    padding: 10px 0;
+  }
+  .pd-close span { font-size: 1.5rem; font-weight: 300; line-height: 0; }
+
+  .pd-body {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+    column-gap: var(--gutter);
+    row-gap: 32px;
+    align-items: start;
+  }
+  .pd-gallery { grid-column: 1 / span 6; position: sticky; top: var(--header-h); }
+  .pd-figure { background: #1b1b1b; }
+  .pd-figure img {
+    width: 100%;
+    height: auto;
+    max-height: calc(100vh - var(--header-h) - 96px);
+    object-fit: contain;
+    transition: opacity 0.35s var(--ease);
+  }
+  .pd-figure img.is-loading { opacity: 0.3; }
+  .pd-nav { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; }
+  .pd-arrow {
+    width: 48px; height: 40px;
+    border: 1px solid var(--line-dark); background: none; color: inherit; cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s var(--ease), color 0.3s var(--ease);
+  }
+  .pd-arrow:hover { background: var(--cultured); color: var(--smoky-black); }
+  .pd-arrow[disabled] { opacity: 0.25; pointer-events: none; }
+  .pd-imgcount { color: rgba(242, 242, 242, 0.55); }
+
+  .pd-info { grid-column: 8 / -1; display: flex; flex-direction: column; gap: 28px; padding-bottom: 40px; }
+  .pd-title { font-size: var(--fs-h2); }
+  .pd-datos { display: grid; grid-template-columns: auto 1fr; column-gap: 24px; row-gap: 0; margin: 0; }
+  .pd-datos :global(dt),
+  .pd-datos :global(dd) { padding: 10px 0; border-top: 1px solid var(--line-dark); margin: 0; }
+  .pd-datos :global(dt) { font-size: var(--fs-label); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(242, 242, 242, 0.55); padding-top: 13px; }
+  .pd-datos :global(dd) { font-size: var(--fs-small); }
+  .pd-memoria { display: flex; flex-direction: column; gap: 14px; color: rgba(242, 242, 242, 0.78); font-size: 0.9375rem; line-height: 1.65; }
+  .pd-creditos { color: rgba(242, 242, 242, 0.45); }
+  .pd-creditos:empty { display: none; }
+  .pd-cta { align-self: flex-start; }
+
+  @media (max-width: 960px) {
+    .pd-gallery { grid-column: 1 / -1; position: static; }
+    .pd-info { grid-column: 1 / -1; }
+  }
+</style>
+
+<script>
+  type Img = { src: string; srcset: string; w: number; h: number; alt: string };
+  type Data = { slug: string; nombre: string; datos: [string, string][]; memoria: string[]; creditos: string; imagenes: Img[] };
+
+  const dialog = document.querySelector<HTMLDialogElement>('[data-pd]')!;
+  const all: Data[] = JSON.parse(document.getElementById('proyectos-data')!.textContent || '[]');
+  const bySlug = new Map(all.map((d) => [d.slug, d]));
+  const $ = <T extends HTMLElement>(sel: string) => dialog.querySelector<T>(sel)!;
+
+  const img = $<HTMLImageElement>('[data-pd-img]');
+  const prev = $<HTMLButtonElement>('[data-pd-prev]');
+  const next = $<HTMLButtonElement>('[data-pd-next]');
+  let current: Data | null = null;
+  let idx = 0;
+  let opener: HTMLElement | null = null;
+
+  const showImage = (i: number) => {
+    if (!current) return;
+    idx = (i + current.imagenes.length) % current.imagenes.length;
+    const im = current.imagenes[idx];
+    img.classList.add('is-loading');
+    img.onload = () => img.classList.remove('is-loading');
+    img.srcset = im.srcset;
+    img.src = im.src;
+    img.width = im.w;
+    img.height = im.h;
+    img.alt = im.alt;
+    $('[data-pd-imgcount]').textContent = `${String(idx + 1).padStart(2, '0')} / ${String(current.imagenes.length).padStart(2, '0')}`;
+    const single = current.imagenes.length < 2;
+    prev.disabled = single;
+    next.disabled = single;
+    // precarga la siguiente
+    if (!single) {
+      const n = current.imagenes[(idx + 1) % current.imagenes.length];
+      const pre = new Image();
+      pre.sizes = img.sizes;
+      pre.srcset = n.srcset;
+    }
+  };
+
+  const open = (slug: string, from?: HTMLElement) => {
+    const d = bySlug.get(slug);
+    if (!d) return;
+    current = d;
+    opener = from ?? null;
+    $('[data-pd-title]').textContent = d.nombre;
+    const pos = all.indexOf(d) + 1;
+    $('[data-pd-index]').textContent = `Proyecto ${String(pos).padStart(2, '0')} de ${String(all.length).padStart(2, '0')}`;
+    const dl = $('[data-pd-datos]');
+    dl.replaceChildren(
+      ...d.datos.flatMap(([k, v]) => {
+        const dt = document.createElement('dt');
+        dt.textContent = k;
+        const dd = document.createElement('dd');
+        dd.textContent = v;
+        return [dt, dd];
+      }),
+    );
+    const mem = $('[data-pd-memoria]');
+    mem.replaceChildren(
+      ...d.memoria.map((t) => {
+        const p = document.createElement('p');
+        p.textContent = t;
+        return p;
+      }),
+    );
+    $('[data-pd-creditos]').textContent = d.creditos;
+    showImage(0);
+    if (!dialog.open) dialog.showModal();
+    dialog.scrollTop = 0;
+    document.documentElement.style.overflow = 'hidden';
+    history.replaceState(null, '', `#obra-${slug}`);
+  };
+
+  const close = () => {
+    if (dialog.open) dialog.close();
+  };
+  dialog.addEventListener('close', () => {
+    document.documentElement.style.overflow = '';
+    if (location.hash.startsWith('#obra-')) history.replaceState(null, '', location.pathname + location.search);
+    opener?.focus();
+  });
+
+  prev.addEventListener('click', () => showImage(idx - 1));
+  next.addEventListener('click', () => showImage(idx + 1));
+  dialog.querySelectorAll('[data-pd-close]').forEach((b) => b.addEventListener('click', close));
+  $('[data-pd-close-link]').addEventListener('click', () => close());
+  dialog.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') showImage(idx - 1);
+    if (e.key === 'ArrowRight') showImage(idx + 1);
+  });
+  // gesto de deslizar en celulares
+  let x0: number | null = null;
+  img.addEventListener('touchstart', (e) => (x0 = e.touches[0].clientX), { passive: true });
+  img.addEventListener('touchend', (e) => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) showImage(idx + (dx < 0 ? 1 : -1));
+    x0 = null;
+  });
+
+  document.addEventListener('click', (e) => {
+    const t = (e.target as HTMLElement).closest<HTMLElement>('[data-abrir-proyecto]');
+    if (!t) return;
+    e.preventDefault();
+    open(t.dataset.abrirProyecto!, t);
+  });
+
+  // Enlace directo a una obra: …/#obra-casa-am
+  const fromHash = () => {
+    const m = location.hash.match(/^#obra-(.+)$/);
+    if (m && bySlug.has(m[1])) open(m[1]);
+  };
+  fromHash();
+  window.addEventListener('hashchange', fromHash);
+</script>

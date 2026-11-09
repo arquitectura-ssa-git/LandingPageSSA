@@ -1,0 +1,18 @@
+{
+  "nombre": "Casa DFL",
+  "visible": true,
+  "destacado": false,
+  "en_portada": false,
+  "categoria": "Residenciales",
+  "tipo": "Vivienda unifamiliar",
+  "ubicacion": "",
+  "anio": "2019",
+  "resumen": "",
+  "memoria": "",
+  "portada": "casa-dfl-1.webp",
+  "galeria": [
+    "casa-dfl-2.webp"
+  ],
+  "creditos": "",
+  "orden": 29
+}

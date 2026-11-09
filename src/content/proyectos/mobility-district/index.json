@@ -1,0 +1,20 @@
+{
+  "nombre": "Mobility District",
+  "visible": true,
+  "destacado": false,
+  "en_portada": false,
+  "categoria": "Otros proyectos",
+  "tipo": "Desarrollo urbano",
+  "ubicacion": "San Miguel de Tucumán, Tucumán",
+  "anio": "2023",
+  "resumen": "",
+  "memoria": "Patrimonio: Debido a la presencia del edificio en el medio urbano desde 1943 creemos conveniente mantenerlo como icono de la ciudad que otorgara de carácter a la propuesta arquitectónica planteada.\n\nLa propuesta de generar un polo automotriz, potenciara el sector gracias a su ubicación estratégica que presenta una excelente conexión a nivel urbano y metropolitano - regional. - - Arquitectura: Se considera conservar y refuncionalizar la ex cerámica mata, como forma de valorar el patrimonio, incorporando los nuevos programas. su conservación permitirá atenuar el impacto socio - ambiental en su contexto.\n\nEl resto de los edificios propuestos tendrán un carácter de volúmenes simples y puros, con tipologías flexibles que podrán adaptarse a la realidad de mercado que evoluciona constantemente, acompañando de manera armónica la totalidad del conjunto.",
+  "portada": "mobility-district-1.webp",
+  "galeria": [
+    "mobility-district-2.webp",
+    "mobility-district-3.webp",
+    "mobility-district-4.webp"
+  ],
+  "creditos": "",
+  "orden": 15
+}

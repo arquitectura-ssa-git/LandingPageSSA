@@ -1,0 +1,20 @@
+{
+  "nombre": "El Garage Premium",
+  "visible": true,
+  "destacado": false,
+  "en_portada": false,
+  "categoria": "Otros proyectos",
+  "tipo": "Comercial",
+  "ubicacion": "Yerba Buena, Tucumán",
+  "anio": "2020",
+  "resumen": "",
+  "memoria": "El edificio se implanta en una ubicación privilegiada sobre la Aconquija, la principal arteria de Yerba Buena y nexo con la ciudad de San Miguel de Tucumán. Se busca aprovechar las visuales hacia la avenida y el cuidado de las orientaciones. Morfológicamente el proyecto se materializa de manera sintética y simple, pero a la vez potente, a través de dos volúmenes que se superponen y se contienen entre sí.\n\nEl volumen exterior; que esta girado con respecto al interior, generando una apertura hacia la esquina, mejorando la sensación espacial de amplitud hacia el frente oeste sobre calle Bascary; esta materializado mediante estructura metálica y revestimientos de placas de aluminio y el interior completamente transparente, resuelto con una piel independiente de vidrio.\n\nFuncionalmente el edificio se desarrolla en dos niveles, a nivel de planta baja, el edificio posee una explanada de acceso que jerarquiza el edificio debido a la diferencia de nivel que posee con respecto de la vereda, generando asi un espacio de transición a través de la escalinata y rampa.\n\nEn este nivel funciona el salón de exposición y algunos servicios mínimos, a nivel de planta de entrepiso el edificio cuenta con oficinas y un lounge de espera con balcón hacia la doble altura del salón y desborde visual hacia la esquina.",
+  "portada": "el-garage-premium-1.webp",
+  "galeria": [
+    "el-garage-premium-2.webp",
+    "el-garage-premium-3.webp",
+    "el-garage-premium-4.webp"
+  ],
+  "creditos": "",
+  "orden": 28
+}

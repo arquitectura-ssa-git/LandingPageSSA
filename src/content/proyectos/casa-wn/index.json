@@ -1,0 +1,20 @@
+{
+  "nombre": "Casa WN",
+  "visible": true,
+  "destacado": false,
+  "en_portada": false,
+  "categoria": "Residenciales",
+  "tipo": "Vivienda unifamiliar",
+  "ubicacion": "Country del Jockey – Yerba Buena, Tucumán",
+  "anio": "2019",
+  "resumen": "",
+  "memoria": "SUPERFICIE: 500.00 m2 Ubicada en un lote rectangular, de proporciones alargadas con frente al sur, y contrafrente al norte y lindante al golf. El partido de esta casa se genera a partir de un eje ordenador desde el acceso hacia un patio, generando una “H” donde la circulación es central dividiendo en dos alas sectores en planta baja y planta alta, con la característica espacial de un patio interno que otorga la transparencia interior-exterior frente-contrafrente.\n\nEste proyecto se caracteriza principalmente por la materialización: en su envolvente, planos opacos de hormigón visto, la doble piel de los filtros espaciales de mallas perforadas a modo de lamas verticales, las lamas de hormigón que se convierten en parasoles y las superficies transparentes.\n\nTodos estos elementos constitutivos conforman las fachadas que se abren, cierran y tamizan la luz solar hacia el interior, provocando cautivantes efectos de luces y sombras. en su interior: El uso del hormigón visto escultóricamente en la escalera, la combinación con materiales nobles como la madera y la piedra. La vivienda refleja una gran integración estética, material y funcional, con espacios sociales contemporáneos y un interiorismo que suma calidez y confort.",
+  "portada": "casa-wn-1.webp",
+  "galeria": [
+    "casa-wn-2.webp",
+    "casa-wn-3.webp",
+    "casa-wn-4.webp"
+  ],
+  "creditos": "",
+  "orden": 32
+}

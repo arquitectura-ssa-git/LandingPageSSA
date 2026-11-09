@@ -1,0 +1,20 @@
+{
+  "nombre": "Casa DLT",
+  "visible": true,
+  "destacado": false,
+  "en_portada": false,
+  "categoria": "Residenciales",
+  "tipo": "Vivienda unifamiliar",
+  "ubicacion": "Tafí del Valle, Tucumán",
+  "anio": "2022",
+  "resumen": "",
+  "memoria": "",
+  "portada": "casa-dlt-1.webp",
+  "galeria": [
+    "casa-dlt-2.webp",
+    "casa-dlt-3.webp",
+    "casa-dlt-4.webp"
+  ],
+  "creditos": "",
+  "orden": 17
+}

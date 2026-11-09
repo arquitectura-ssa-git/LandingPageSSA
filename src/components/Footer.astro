@@ -1,13 +1,10 @@
 ---
 import LogoBajada from '../assets/brand/logo-ssa-bajada.svg';
 import { nav, site } from '../data/site';
+import { sitio } from '../lib/contenido';
 
 const year = new Date().getFullYear();
-const redes = [
-  { label: 'Instagram', href: site.social.instagram },
-  { label: 'LinkedIn', href: site.social.linkedin },
-  { label: 'Facebook', href: site.social.facebook },
-].filter((r) => r.href);
+const redes = sitio.redes;
 ---
 <footer class="footer">
   <div class="wrap">

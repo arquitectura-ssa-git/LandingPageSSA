@@ -1,0 +1,36 @@
+{
+  "frase_portada": "Arquitectura que trasciende.",
+  "contacto": {
+    "whatsapp": "",
+    "email": "",
+    "telefono": "",
+    "direccion": ""
+  },
+  "redes": {
+    "instagram": "https://www.instagram.com/saezsanchez_arquitectos",
+    "linkedin": "https://www.linkedin.com/company/saez-sanchez-arquitectos/",
+    "facebook": "https://www.facebook.com/saezsanchezarq/"
+  },
+  "hitos": [
+    {
+      "valor": 20,
+      "prefijo": "",
+      "etiqueta": "Años de trayectoria"
+    },
+    {
+      "valor": 100,
+      "prefijo": "+",
+      "etiqueta": "Proyectos"
+    },
+    {
+      "valor": 9,
+      "prefijo": "",
+      "etiqueta": "Países"
+    },
+    {
+      "valor": 10,
+      "prefijo": "",
+      "etiqueta": "Premios"
+    }
+  ]
+}

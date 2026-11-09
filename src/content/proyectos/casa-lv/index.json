@@ -1,0 +1,20 @@
+{
+  "nombre": "Casa LV",
+  "visible": true,
+  "destacado": false,
+  "en_portada": false,
+  "categoria": "Residenciales",
+  "tipo": "Vivienda unifamiliar",
+  "ubicacion": "Country Praderas",
+  "anio": "2022",
+  "resumen": "",
+  "memoria": "La vivienda se emplaza en el lote Nº 223 del Country Praderas Resort. Se desarrolla en tres niveles con un lenguaje elegante y moderno. A nivel subsuelo, los espacios que alberga son: cochera para dos autos con baulera, patio interno en triple altura, playroom, estudio de Make up, depósito y una habitación con baño, de servicio.\n\nEn planta baja se ubican los espacios sociales: la cocina/comedor con terraza exterior, living principal, toilette, escritorio, quincho con asador y baño y una galería extensa conectada a la piscina de borde infinito mediante un deck exterior moderno de desborde. La planta alta es el sector privado, conformada por una master suite, dos dormitorios, baño y un estudio. La escalera principal permite comunicar estos tres niveles.\n\nSu materialización se sintetiza en dos volúmenes puros, predominantemente horizontales, de líneas rectas, superpuestos, marcando una diferenciación clara de niveles. El nivel de planta alta, parece suspenderse sobre una base fuerte y expresiva de color gris oscuro y de piedra, generada a través de los niveles de planta baja y subsuelo.\n\nEsto se potencia con el blanco de los muros de planta alta que son envueltos por una piel de hormigón blanco perforada por grandes rectángulos, dando sensación de liviandad y simpleza. Además, las grandes perforaciones se repiten sucesivamente en los distintos planos que cierran y definen la vivienda, otorgando a la misma: amplitud, apertura, luz natural, ventilación, vistas, jardines interiores. Su estructura es de hormigón y piedra.\n\nLa combinación de ambos materiales da equilibrio entre lo pesado y ligero brindando armonía al edificio. El hormigón se destaca en los aleros que vuelan buscando la horizontalidad y en la piel que envuelve la planta alta, mientras la piedra aparece da carácter y sobriedad. También observamos otros materiales nobles que generan buena terminación y precisión en los detalles como aluminio anodizado, vidrio y madera en ventanas y puertas.\n\nEn síntesis, esta vivienda busca un diseño remarcable de destaque arquitectónico, y un ambiente para el disfrute familiar. Es una opción exclusiva en un country cerca de la ciudad y con rápida accesibilidad como lo es el Country Praderas.",
+  "portada": "casa-lv-1.webp",
+  "galeria": [
+    "casa-lv-2.webp",
+    "casa-lv-3.webp",
+    "casa-lv-4.webp"
+  ],
+  "creditos": "",
+  "orden": 19
+}

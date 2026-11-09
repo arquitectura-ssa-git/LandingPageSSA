@@ -1,0 +1,20 @@
+{
+  "nombre": "Casa AB",
+  "visible": true,
+  "destacado": false,
+  "en_portada": false,
+  "categoria": "Residenciales",
+  "tipo": "Vivienda unifamiliar",
+  "ubicacion": "Country del Jockey – Yerba Buena, Tucumán",
+  "anio": "2020",
+  "resumen": "",
+  "memoria": "Obra existente de nuestro estudio, la Casa WN. Optamos por la estrategia de trabajar el conjunto con su condicionante en pro de generar un espacio conjunto superador. Espejamos la planta en que se estructura en L en ambos proyectos para obtener un jardín, aunque dividido por setos arbustivos, mucho mas amplio en perspectiva conjunta.\n\nEsta estrategia de conjunto la habíamos empleado en dos casas que desarrollamos en conjunto, con buenos resultados de visuales alejadas e intimidad. En relación a esta ultima característica, se dispuso un elemento carcateristico como son los muros de hormigón horadados y texturados, que se abren parcialmente y definen espacios filtrados a la rigurosa orientación oeste.\n\nEl esquema de esta casa se conforma como un gran espacio abierto contenedor con la envolvente como cascara de hormigón, el cual es atravesado por un prisma revestido con textura de madera, el cual evidencia continuidad espacial entre planta baja y planta alta atravesando la casa. Una particularidad de esta casa es un pequeño gimnasio independiente, que se organiza en conjunto a la piscina y semi-enterrado para que la vista del quincho no se interrumpa.\n\nAdemás de generar un espacio cálido, intimo, controlado en visuales desde vecinos, que disfruta de la caída de agua que produce el borde infinito por la depresión generada en la topografía.",
+  "portada": "casa-ab-1.webp",
+  "galeria": [
+    "casa-ab-2.webp",
+    "casa-ab-3.webp",
+    "casa-ab-4.webp"
+  ],
+  "creditos": "",
+  "orden": 25
+}

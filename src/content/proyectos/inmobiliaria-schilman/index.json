@@ -1,0 +1,20 @@
+{
+  "nombre": "Inmobiliaria Schilman",
+  "visible": true,
+  "destacado": false,
+  "en_portada": false,
+  "categoria": "Otros proyectos",
+  "tipo": "Comercial",
+  "ubicacion": "Yerba Buena, Tucumán",
+  "anio": "2018",
+  "resumen": "",
+  "memoria": "",
+  "portada": "inmobiliaria-schilman-1.webp",
+  "galeria": [
+    "inmobiliaria-schilman-2.webp",
+    "inmobiliaria-schilman-3.webp",
+    "inmobiliaria-schilman-4.webp"
+  ],
+  "creditos": "",
+  "orden": 34
+}

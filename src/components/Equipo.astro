@@ -1,0 +1,115 @@
+---
+import { Picture } from 'astro:assets';
+import { estudio } from '../lib/contenido';
+const { fundadores, reconocimientos } = estudio;
+---
+<section class="equipo" aria-labelledby="equipo-title">
+  <div class="wrap">
+    {fundadores.length > 0 && (
+      <>
+        <header class="grid equipo-head">
+          <p class="label label-bracket equipo-label" data-reveal>Fundadores</p>
+          <h2 class="equipo-title" id="equipo-title" data-reveal style="--delay:.06s">
+            Un estudio liderado por sus socios fundadores desde 2006.
+          </h2>
+        </header>
+
+        <ul class="fundadores">
+          {fundadores.map((f, i) => (
+            <li class="fundador" data-reveal style={`--delay:${0.1 * i}s`}>
+              {f.foto && (
+                <Picture
+                  src={f.foto}
+                  alt={`Retrato de ${f.nombre}`}
+                  formats={['webp']}
+                  widths={[400, 700, 1000]}
+                  sizes="(max-width: 720px) 100vw, 30vw"
+                  loading="lazy"
+                  class="fundador-foto"
+                />
+              )}
+              <div class="fundador-text">
+                <h3 class="fundador-name">{f.nombre}</h3>
+                {f.titulo && <p class="label fundador-titulo">{f.titulo}</p>}
+                {f.bio[0] && <p class="fundador-bio">{f.bio[0]}</p>}
+                {f.bio.length > 1 && (
+                  <details class="fundador-mas">
+                    <summary class="link-arrow"><span data-mas>Leer más</span><span data-menos>Leer menos</span></summary>
+                    {f.bio.slice(1).map((b) => <p class="fundador-bio">{b}</p>)}
+                  </details>
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </>
+    )}
+
+    {reconocimientos.length > 0 && (
+      <div class="grid premios">
+        <h2 class="label label-bracket premios-label" data-reveal>Reconocimientos</h2>
+        <ul class="premios-list">
+          {reconocimientos.map((r) => (
+            <li class="premio" data-reveal>
+              <span class="premio-anio">{r.anio ?? ''}</span>
+              <span class="premio-titulo">{r.titulo}</span>
+              <span class="premio-detalle">{r.detalle}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .equipo { background: var(--cultured); padding: clamp(88px, 11vw, 180px) 0; }
+  .equipo-head { row-gap: 16px; margin-bottom: clamp(48px, 6vw, 88px); }
+  .equipo-label { grid-column: 1 / span 2; color: var(--sonic-silver); padding-top: 0.5em; }
+  .equipo-title { grid-column: 3 / -1; font-size: var(--fs-h2); line-height: 1.2; max-width: 28ch; }
+
+  .fundadores {
+    display: grid;
+    grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+    column-gap: var(--gutter);
+    row-gap: 56px;
+  }
+  .fundador { grid-column: span 4; display: flex; flex-direction: column; gap: 22px; }
+  .fundador:first-child { grid-column: 3 / span 4; }
+  .fundador :global(.fundador-foto) { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; filter: grayscale(1); }
+  .fundador-text { display: flex; flex-direction: column; gap: 10px; }
+  .fundador-name { font-size: clamp(1.25rem, 1.05rem + 0.6vw, 1.625rem); }
+  .fundador-titulo { color: var(--sonic-silver); }
+  .fundador-bio { color: var(--sonic-silver); font-size: 0.9375rem; max-width: 52ch; }
+  .fundador-mas summary { list-style: none; cursor: pointer; width: fit-content; margin-top: 6px; }
+  .fundador-mas summary::-webkit-details-marker { display: none; }
+  .fundador-mas [data-menos], .fundador-mas[open] [data-mas] { display: none; }
+  .fundador-mas[open] [data-menos] { display: inline; }
+  .fundador-mas[open] summary { margin-bottom: 12px; }
+
+  .premios { margin-top: clamp(96px, 12vw, 180px); row-gap: 20px; }
+  .premios-label { grid-column: 1 / span 2; color: var(--sonic-silver); padding-top: 16px; }
+  .premios-list { grid-column: 3 / -1; }
+  .premio {
+    display: grid;
+    grid-template-columns: 80px minmax(0, 1fr) minmax(0, 1.4fr);
+    gap: var(--gutter);
+    padding: 16px 0;
+    border-top: 1px solid var(--line-light);
+    font-size: var(--fs-small);
+  }
+  .premio:last-child { border-bottom: 1px solid var(--line-light); }
+  .premio-anio { color: var(--sonic-silver); font-variant-numeric: tabular-nums; }
+  .premio-titulo { font-weight: 500; }
+  .premio-detalle { color: var(--sonic-silver); }
+
+  @media (max-width: 1280px) {
+    .equipo-label, .equipo-title, .premios-label, .premios-list { grid-column: 1 / -1; }
+    .fundador, .fundador:first-child { grid-column: span 5; }
+  }
+  @media (max-width: 720px) {
+    .fundador, .fundador:first-child { grid-column: 1 / -1; }
+    .premio { grid-template-columns: 56px 1fr; }
+    .premio-detalle { grid-column: 2; }
+  }
+</style>

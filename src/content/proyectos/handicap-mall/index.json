@@ -1,0 +1,20 @@
+{
+  "nombre": "Handicap Mall",
+  "visible": true,
+  "destacado": false,
+  "en_portada": false,
+  "categoria": "Otros proyectos",
+  "tipo": "Comercial",
+  "ubicacion": "Yerba Buena, Tucumán",
+  "anio": "2023",
+  "resumen": "",
+  "memoria": "",
+  "portada": "handicap-mall-1.webp",
+  "galeria": [
+    "handicap-mall-2.webp",
+    "handicap-mall-3.webp",
+    "handicap-mall-4.webp"
+  ],
+  "creditos": "",
+  "orden": 16
+}
