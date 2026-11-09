@@ -1,7 +1,8 @@
 {
+  "orden": 2,
   "nombre": "Vilabonita",
   "visible": true,
-  "destacado": true,
+  "destacado": false,
   "en_portada": false,
   "categoria": "Otros proyectos",
   "tipo": "Conjunto residencial",
@@ -16,6 +17,5 @@
     "vilabonita-3.webp",
     "vilabonita-4.webp"
   ],
-  "creditos": "",
-  "orden": 2
+  "creditos": ""
 }
