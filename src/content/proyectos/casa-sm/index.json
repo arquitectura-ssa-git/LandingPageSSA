@@ -1,12 +1,14 @@
 {
+  "orden": 6,
   "nombre": "Casa SM",
   "visible": true,
-  "destacado": false,
-  "en_portada": false,
+  "destacado": true,
+  "en_portada": true,
   "categoria": "Residenciales",
   "tipo": "Vivienda unifamiliar",
   "ubicacion": "Praderas Country, Yerba Buena, Tucumán",
   "anio": "2024",
+  "superficie": null,
   "resumen": "",
   "memoria": "La casa, ubicada en Praderas Country sobre dos lotes de 2400 m², uno en esquina y colindante a un acceso secundario, enfrenta el reto de proteger la intimidad y tranquilidad familiar frente al ruido y tránsito externo. La estrategia de diseño prioriza la orientación y la creación de filtros físicos y bioclimáticos.\n\nSe dispone un muro ciego en planta baja, construido con piedra natural, albergando servicios y garage, protegiendo los espacios principales orientados hacia el jardín interior. En planta alta, se refuerza esta protección con una fachada sur sin aberturas. Para el confort térmico, se incorporan filtros bioclimáticos como pérgolas, aleros y lamas verticales, especialmente en el frente oeste.\n\nEn cuanto a sustentabilidad, se utilizan materiales de alto rendimiento térmico (chapas con poliuretano, HCCA, fachadas ventiladas, vidrios dobles bajo emisivos y carpintería de PVC) junto con sistemas activos de captación solar. La vivienda se organiza en dos niveles: planta baja con áreas de servicio, sociales y de esparcimiento; y planta alta con el sector privado que incluye sala de cine, gimnasio, dos dormitorios en suite y una máster suite con terraza.",
   "portada": "casa-sm-1.webp",
@@ -15,6 +17,5 @@
     "casa-sm-3.webp",
     "casa-sm-4.webp"
   ],
-  "creditos": "Fotografía: Rocío Checa",
-  "orden": 6
+  "creditos": "Fotografía: Rocío Checa"
 }
