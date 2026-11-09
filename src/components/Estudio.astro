@@ -103,8 +103,9 @@ const valores = [
   .estudio-title {
     grid-column: 3 / -1;
     font-size: var(--fs-h2);
-    line-height: 1.02;
-    letter-spacing: -0.035em;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    max-width: 34ch;
   }
   .muted { color: var(--sonic-silver); }
 
@@ -135,7 +136,7 @@ const valores = [
 
   .estudio-proposito { display: flex; flex-direction: column; gap: 18px; }
   .estudio-proposito h3 { color: var(--sonic-silver); }
-  .estudio-proposito > p:first-of-type { font-size: var(--fs-lead); line-height: 1.32; font-weight: 300; letter-spacing: -0.01em; }
+  .estudio-proposito > p:first-of-type { font-size: var(--fs-lead); line-height: 1.45; font-weight: 300; }
 
   .estudio-since {
     display: flex;
@@ -145,7 +146,7 @@ const valores = [
     padding-top: 20px;
     border-top: 1px solid var(--line-light);
   }
-  .since-num { font-size: clamp(3rem, 2rem + 3vw, 5rem); font-weight: 300; letter-spacing: -0.05em; line-height: 0.8; }
+  .since-num { font-size: clamp(2rem, 1.6rem + 1.2vw, 2.75rem); font-weight: 300; letter-spacing: -0.03em; line-height: 0.85; }
   .estudio-since .label { color: var(--sonic-silver); }
 
   /* Valores */
@@ -165,7 +166,7 @@ const valores = [
     border-top: 1px solid var(--lead-gray);
   }
   .valor-n { font-size: var(--fs-label); font-weight: 500; letter-spacing: 0.12em; color: var(--sonic-silver); }
-  .valor-title { font-size: clamp(1.75rem, 1.2rem + 1.4vw, 2.5rem); font-weight: 300; letter-spacing: -0.03em; line-height: 1; margin: 0; }
+  .valor-title { font-size: clamp(1.25rem, 1.05rem + 0.6vw, 1.625rem); font-weight: 300; letter-spacing: -0.015em; line-height: 1.1; margin: 0; }
   .valor p { color: var(--sonic-silver); max-width: 34ch; }
 
   @media (max-width: 1280px) {

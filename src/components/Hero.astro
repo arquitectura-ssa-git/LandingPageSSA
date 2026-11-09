@@ -30,18 +30,12 @@ const SLIDE_MS = 7000; // tiempo que se muestra cada obra
       <p class="label label-bracket hero-kicker" data-reveal>Oficina de arquitectura</p>
 
       <h1 class="hero-title" data-reveal style="--delay:.1s">
-        Arquitectura de alto estándar, pensada para trascender.
+        Arquitectura que trasciende.
       </h1>
 
-      <div class="hero-side" data-reveal style="--delay:.25s">
-        <p>
-          Desarrollamos proyectos con foco en la innovación y la excelencia:
-          vivienda, desarrollos residenciales, hotelería y obra corporativa.
-        </p>
-        <div class="hero-actions">
-          <a href="#contacto" class="btn btn-solid-light">Cotizá tu proyecto <span class="arrow" aria-hidden="true">→</span></a>
-          <a href="#proyectos" class="btn btn-light">Ver proyectos</a>
-        </div>
+      <div class="hero-actions" data-reveal style="--delay:.2s">
+        <a href="#contacto" class="link-arrow">Cotizá tu proyecto <span class="arrow" aria-hidden="true">→</span></a>
+        <a href="#proyectos" class="link-arrow link-soft">Ver proyectos</a>
       </div>
     </div>
 
@@ -110,8 +104,8 @@ const SLIDE_MS = 7000; // tiempo que se muestra cada obra
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(180deg, rgba(18, 18, 18, 0.62) 0%, rgba(18, 18, 18, 0.2) 14%, rgba(18, 18, 18, 0) 30%),
-      linear-gradient(0deg, rgba(18, 18, 18, 0.82) 0%, rgba(18, 18, 18, 0.35) 42%, rgba(18, 18, 18, 0) 70%);
+      linear-gradient(180deg, rgba(18, 18, 18, 0.5) 0%, rgba(18, 18, 18, 0.15) 12%, rgba(18, 18, 18, 0) 24%),
+      linear-gradient(0deg, rgba(18, 18, 18, 0.62) 0%, rgba(18, 18, 18, 0.22) 20%, rgba(18, 18, 18, 0) 38%);
   }
 
   .hero-content {
@@ -120,29 +114,27 @@ const SLIDE_MS = 7000; // tiempo que se muestra cada obra
     padding-bottom: 28px;
   }
 
-  .hero-grid { row-gap: 28px; align-items: end; }
-  .hero-kicker { grid-column: 1 / -1; opacity: 0.8; }
+  .hero-grid { row-gap: 14px; align-items: end; }
+  .hero-kicker { grid-column: 1 / -1; opacity: 0.75; }
   .hero-title {
-    grid-column: 1 / span 7;
+    grid-column: 1 / span 6;
     font-size: var(--fs-h1);
-    max-width: 15ch;
+    line-height: 1.05;
   }
-  .hero-side {
-    grid-column: 8 / -1;
+  .hero-actions {
+    grid-column: 7 / -1;
+    justify-self: end;
     display: flex;
-    flex-direction: column;
-    gap: 28px;
-    font-size: var(--fs-body);
-    line-height: 1.5;
-    color: rgba(242, 242, 242, 0.86);
-    max-width: 36ch;
-    padding-bottom: 0.6em;
+    flex-wrap: wrap;
+    gap: 14px 32px;
+    padding-bottom: 0.35em;
   }
-  .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+  .link-soft { opacity: 0.7; border-bottom-color: transparent; }
+  .link-soft:hover { opacity: 1; border-bottom-color: currentColor; }
 
   .hero-foot {
-    margin-top: clamp(40px, 7vh, 88px);
-    padding-top: 18px;
+    margin-top: clamp(28px, 4vh, 48px);
+    padding-top: 16px;
     border-top: 1px solid var(--line-dark);
     display: grid;
     grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
@@ -213,8 +205,8 @@ const SLIDE_MS = 7000; // tiempo que se muestra cada obra
   .hero-place { grid-column: 8 / -1; text-align: right; white-space: nowrap; opacity: 0.7; }
 
   @media (max-width: 1280px) {
-    .hero-title { grid-column: 1 / span 10; }
-    .hero-side { grid-column: 1 / span 6; }
+    .hero-title { grid-column: 1 / span 6; }
+    .hero-actions { grid-column: 7 / -1; }
     .hero-caption { grid-column: 1 / span 6; }
     .hero-controls { grid-column: 7 / -1; }
     .hero-place { display: none; }
@@ -222,10 +214,9 @@ const SLIDE_MS = 7000; // tiempo que se muestra cada obra
 
   @media (max-width: 720px) {
     .hero-content { padding-top: calc(var(--header-h) + 32px); padding-bottom: 20px; }
-    .hero-title { grid-column: 1 / -1; max-width: none; }
-    .hero-side { grid-column: 1 / -1; gap: 22px; max-width: none; }
-    .hero-actions .btn { flex: 1 1 auto; justify-content: center; }
-    .hero-foot { row-gap: 14px; margin-top: 32px; }
+    .hero-title { grid-column: 1 / -1; }
+    .hero-actions { grid-column: 1 / -1; justify-self: start; padding-top: 8px; }
+    .hero-foot { row-gap: 14px; margin-top: 24px; }
     .hero-caption, .hero-controls { grid-column: 1 / -1; }
     .caption-meta { flex-basis: 100%; }
   }
